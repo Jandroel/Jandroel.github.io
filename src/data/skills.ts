@@ -1,0 +1,82 @@
+import type { SkillGroup } from "@/types";
+
+export const skillGroups = [
+  {
+    category: "Programming Languages",
+    description: "Core languages for problem solving and application logic.",
+    icon: "code",
+    skills: [
+      { name: "C++", category: "Programming Languages", icon: "SiCplusplus", color: "#60A5FA", level: "Learning", featured: true },
+      { name: "Python", category: "Programming Languages", icon: "SiPython", color: "#FACC15", level: "Comfortable", featured: true },
+      { name: "Java", category: "Programming Languages", icon: "FaJava", color: "#F97316", level: "Learning", featured: true },
+      { name: "JavaScript", category: "Programming Languages", icon: "SiJavascript", color: "#F7DF1E", level: "Comfortable", featured: true },
+      { name: "TypeScript", category: "Programming Languages", icon: "SiTypescript", color: "#3178C6", level: "Comfortable", featured: true },
+    ],
+  },
+  {
+    category: "Frontend",
+    description: "Tools for building polished, responsive interfaces.",
+    icon: "layout",
+    skills: [
+      { name: "React", category: "Frontend", icon: "SiReact", color: "#61DAFB", level: "Comfortable", featured: true },
+      { name: "Next.js", category: "Frontend", icon: "SiNextdotjs", color: "#F8FAFC", level: "Learning", featured: true },
+      { name: "Angular", category: "Frontend", icon: "SiAngular", color: "#DD0031", level: "Exploring", featured: false },
+      { name: "Vue.js", category: "Frontend", icon: "SiVuedotjs", color: "#4FC08D", level: "Exploring", featured: false },
+      { name: "HTML5", category: "Frontend", icon: "SiHtml5", color: "#E34F26", level: "Comfortable", featured: false },
+      { name: "CSS3", category: "Frontend", icon: "SiCss", color: "#1572B6", level: "Comfortable", featured: false },
+      { name: "Tailwind CSS", category: "Frontend", icon: "SiTailwindcss", color: "#38BDF8", level: "Comfortable", featured: true },
+    ],
+  },
+  {
+    category: "Backend & Frameworks",
+    description: "Server-side foundations and API development.",
+    icon: "server",
+    skills: [
+      { name: "Spring Boot", category: "Backend & Frameworks", icon: "SiSpringboot", color: "#6DB33F", level: "Learning", featured: true },
+      { name: "FastAPI", category: "Backend & Frameworks", icon: "SiFastapi", color: "#009688", level: "Learning", featured: true },
+      { name: "Node.js", category: "Backend & Frameworks", icon: "SiNodedotjs", color: "#5FA04E", level: "Learning", featured: false },
+    ],
+  },
+  {
+    category: "Databases",
+    description: "Structured data, documents, and relational thinking.",
+    icon: "database",
+    skills: [
+      { name: "MySQL", category: "Databases", icon: "SiMysql", color: "#4479A1", level: "Comfortable", featured: true },
+      { name: "MongoDB", category: "Databases", icon: "SiMongodb", color: "#47A248", level: "Learning", featured: false },
+      { name: "PostgreSQL", category: "Databases", icon: "SiPostgresql", color: "#4169E1", level: "Learning", featured: true },
+    ],
+  },
+  {
+    category: "Cloud",
+    description: "Deployment and infrastructure skills in progress.",
+    icon: "cloud",
+    skills: [
+      { name: "AWS", category: "Cloud", icon: "FaAws", color: "#FF9900", level: "Exploring", featured: false },
+      { name: "Azure", category: "Cloud", icon: "FaMicrosoft", color: "#0078D4", level: "Exploring", featured: false },
+      { name: "Google Cloud", category: "Cloud", icon: "SiGooglecloud", color: "#4285F4", level: "Exploring", featured: false },
+    ],
+  },
+  {
+    category: "Tools",
+    description: "Daily tools for versioning, testing, and development.",
+    icon: "wrench",
+    skills: [
+      { name: "Git", category: "Tools", icon: "SiGit", color: "#F05032", level: "Comfortable", featured: true },
+      { name: "GitHub", category: "Tools", icon: "SiGithub", color: "#F8FAFC", level: "Comfortable", featured: true },
+      { name: "Docker", category: "Tools", icon: "SiDocker", color: "#2496ED", level: "Learning", featured: false },
+      { name: "Postman", category: "Tools", icon: "SiPostman", color: "#FF6C37", level: "Comfortable", featured: false },
+      { name: "VS Code", category: "Tools", icon: "VscVscode", color: "#007ACC", level: "Comfortable", featured: false },
+      { name: "IntelliJ IDEA", category: "Tools", icon: "SiIntellijidea", color: "#EC4899", level: "Learning", featured: false },
+    ],
+  },
+  {
+    category: "Agile",
+    description: "Planning habits for steady project progress.",
+    icon: "workflow",
+    skills: [
+      { name: "Scrum", category: "Agile", icon: "LuRefreshCw", color: "#22D3EE", level: "Learning", featured: false },
+      { name: "Kanban", category: "Agile", icon: "LuColumns3", color: "#A855F7", level: "Learning", featured: false },
+    ],
+  },
+] as const satisfies readonly SkillGroup[];

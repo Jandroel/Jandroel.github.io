@@ -1,0 +1,38 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# next
+.next
+out
+
+# production
+dist
+build
+
+# testing
+coverage
+
+# env
+.env
+.env*
+.env*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# system
+.DS_Store
+Thumbs.db
+
+# vercel
+.vercel
+
+# local project notes
+Prompt.txt
+
+# typescript
+*.tsbuildinfo
