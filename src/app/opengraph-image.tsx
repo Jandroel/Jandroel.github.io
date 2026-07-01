@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Jandroel Software Engineering Portfolio";
+export const alt = "Jandroel Portfolio";
+export const dynamic = "force-static";
 export const size = {
   width: 1200,
   height: 630,
@@ -42,7 +43,7 @@ export default function Image() {
             Jandroel
           </div>
           <div style={{ color: "#CBD5E1", fontSize: 36, lineHeight: 1.25 }}>
-            Software Engineering Student building full-stack web experiences.
+            Personal portfolio for selected projects, technical skills, and web experiences.
           </div>
         </div>
       </div>
