@@ -18,12 +18,13 @@ export function Timeline() {
           <SectionHeading
             id="journey-title"
             eyebrow="Journey"
+            mark="道"
             title="My Developer Journey"
-            description="A simple timeline of what I am learning, building, and improving as a software engineering student."
+            description="A simple timeline of what I am learning, building, and improving, framed like unlocked chapters."
           />
         </Reveal>
 
-        <ol className="relative mt-10 min-w-0 space-y-5 before:absolute before:left-4 before:top-8 before:h-[calc(100%-2rem)] before:w-px before:bg-[linear-gradient(180deg,var(--cyan),var(--violet),var(--magenta))] sm:before:left-6">
+        <ol className="relative mt-10 min-w-0 space-y-5 before:absolute before:left-4 before:top-8 before:h-[calc(100%-2rem)] before:w-px before:bg-[linear-gradient(180deg,var(--vermilion),var(--gold),var(--cyan))] sm:before:left-6">
           {timeline.map((item, index) => (
             <TimelineItem key={item.title} item={item} index={index} />
           ))}

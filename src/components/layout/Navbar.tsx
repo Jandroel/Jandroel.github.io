@@ -5,7 +5,12 @@ import { FaGithub } from "react-icons/fa";
 
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { links } from "@/data/links";
 import { siteConfig } from "@/data/site";
 import { navLinks } from "@/lib/constants";
@@ -40,15 +45,22 @@ export function Navbar() {
 
   return (
     <TooltipProvider delayDuration={160}>
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#05060A]/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#07070A]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <a
             href="#hero"
-            className="focus-ring group inline-flex items-center gap-2 rounded-md"
+            className="focus-ring group inline-flex items-center gap-3 rounded-md"
             aria-label="Jandroel home"
           >
-            <span className="font-bold text-white">{siteConfig.name}</span>
-            <span className="font-pixel text-xs text-cyan-200">dev</span>
+            <span className="hanko-mark text-sm" aria-hidden="true">
+              J
+            </span>
+            <span className="grid leading-none">
+              <span className="font-bold text-white">{siteConfig.name}</span>
+              <span className="jp-kicker mt-1 text-[0.62rem] text-[#ffb7a8]">
+                build log
+              </span>
+            </span>
           </a>
 
           <nav aria-label="Primary navigation" className="hidden lg:block">
@@ -62,7 +74,7 @@ export function Navbar() {
                       href={link.href}
                       className={cn(
                         "focus-ring rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.045] hover:text-white",
-                        isActive && "bg-cyan-300/10 text-cyan-100",
+                        isActive && "bg-[rgba(255,77,46,0.1)] text-[#ffb7a8]",
                       )}
                     >
                       {link.label}

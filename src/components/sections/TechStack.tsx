@@ -31,18 +31,15 @@ const categoryIcons: Record<string, LucideIcon> = {
 
 export function TechStack() {
   return (
-    <section
-      id="stack"
-      aria-labelledby="stack-title"
-      className="relative py-16 sm:py-20"
-    >
+    <section id="stack" aria-labelledby="stack-title" className="relative py-16 sm:py-20">
       <Container>
         <Reveal>
           <SectionHeading
             id="stack-title"
             eyebrow="Tech Stack"
+            mark="技"
             title="Technologies & Tools I Use"
-            description="A focused mix of languages, frameworks, databases, cloud platforms, and workflow tools."
+            description="A focused mix of languages, frameworks, databases, cloud platforms, and workflow tools arranged like a character stat screen."
           />
         </Reveal>
 
@@ -54,13 +51,11 @@ export function TechStack() {
               <Reveal key={group.category} delay={groupIndex * 0.05}>
                 <Card variant="subtle" className="h-full min-w-0 p-4 sm:p-5">
                   <div className="mb-5 flex min-w-0 items-start gap-4">
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-[rgba(242,184,75,0.24)] bg-[rgba(242,184,75,0.09)] text-[#ffe1a3]">
                       <Icon className="size-5" aria-hidden="true" />
                     </span>
                     <div className="min-w-0">
-                      <h3 className="text-lg font-bold text-white">
-                        {group.category}
-                      </h3>
+                      <h3 className="text-lg font-bold text-white">{group.category}</h3>
                       <p className="mt-1 text-pretty text-sm leading-6 text-[var(--text-soft)]">
                         {group.description}
                       </p>

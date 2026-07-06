@@ -16,15 +16,16 @@ export function Process() {
           <SectionHeading
             id="process-title"
             eyebrow="Process"
+            mark="進"
             title="How I Build"
-            description="A practical workflow for turning ideas into structured, maintainable software."
+            description="A practical workflow for turning rough ideas into something I can test, show, and improve."
           />
         </Reveal>
 
         <div className="relative mt-10 grid min-w-0 gap-5 md:grid-cols-2 lg:grid-cols-5">
           <div
             aria-hidden="true"
-            className="absolute left-0 right-0 top-10 hidden h-px bg-[linear-gradient(90deg,transparent,var(--cyan),var(--violet),var(--magenta),transparent)] lg:block"
+            className="absolute left-0 right-0 top-10 hidden h-px bg-[linear-gradient(90deg,transparent,var(--vermilion),var(--gold),var(--cyan),transparent)] lg:block"
           />
           {processSteps.map((step, index) => (
             <Reveal key={step.title} delay={index * 0.06}>

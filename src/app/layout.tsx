@@ -1,5 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Pixelify_Sans } from "next/font/google";
+import {
+  DotGothic16,
+  Geist,
+  Geist_Mono,
+  Noto_Serif_JP,
+  Pixelify_Sans,
+} from "next/font/google";
 import type { ReactNode } from "react";
 
 import { Footer } from "@/components/layout/Footer";
@@ -28,13 +34,27 @@ const pixelify = Pixelify_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const notoSerifJp = Noto_Serif_JP({
+  subsets: ["latin"],
+  variable: "--font-jp-serif",
+  display: "swap",
+  weight: ["400", "600", "700", "900"],
+});
+
+const dotGothic = DotGothic16({
+  subsets: ["latin"],
+  variable: "--font-jp-pixel",
+  display: "swap",
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Jandroel | Software Engineering Portfolio",
     template: "%s | Jandroel",
   },
   description:
-    "Software Engineering student building full-stack web experiences with frontend, backend, and databases.",
+    "Software Engineering student building full-stack web experiences one project at a time.",
   keywords: [
     "Jandroel",
     "Software Engineering",
@@ -51,7 +71,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jandroel | Software Engineering Portfolio",
     description:
-      "Software Engineering student building full-stack web experiences with frontend, backend, and databases.",
+      "Software Engineering student building full-stack web experiences one project at a time.",
     siteName: "Jandroel Portfolio",
     type: "website",
     locale: "en_US",
@@ -80,7 +100,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geist.variable} ${geistMono.variable} ${pixelify.variable} font-sans antialiased`}
+        className={`${geist.variable} ${geistMono.variable} ${pixelify.variable} ${notoSerifJp.variable} ${dotGothic.variable} font-sans antialiased`}
       >
         <NoiseTexture />
         <Navbar />

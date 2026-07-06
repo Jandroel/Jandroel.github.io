@@ -10,7 +10,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/10 bg-black/10 py-10">
+    <footer className="shoji-screen relative border-t border-white/10 bg-black/10 py-10">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(34,211,238,0.35),rgba(236,72,153,0.25),transparent)]"
@@ -19,9 +19,12 @@ export function Footer() {
         <div className="min-w-0">
           <a
             href="#hero"
-            className="focus-ring inline-flex rounded-md font-bold text-white"
+            className="focus-ring inline-flex items-center gap-3 rounded-md font-bold text-white"
           >
-            {siteConfig.name}
+            <span className="hanko-mark text-sm" aria-hidden="true">
+              J
+            </span>
+            <span>{siteConfig.name}</span>
           </a>
           <p className="mt-2 max-w-xl text-pretty text-sm leading-6 text-[var(--text-muted)]">
             Built with Next.js, TypeScript, Tailwind CSS and Motion.

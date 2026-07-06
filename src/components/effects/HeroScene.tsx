@@ -126,24 +126,35 @@ function AnimeAvatarArt() {
           d="M371 344C394 359 410 382 418 415C395 423 370 417 351 396C344 376 346 358 371 344Z"
           fill="#f8d9ea"
         />
-        <path d="M191 335L210 410" stroke="#111827" strokeLinecap="round" strokeWidth="10" />
-        <path d="M365 335L345 410" stroke="#111827" strokeLinecap="round" strokeWidth="10" />
+        <path
+          d="M191 335L210 410"
+          stroke="#111827"
+          strokeLinecap="round"
+          strokeWidth="10"
+        />
+        <path
+          d="M365 335L345 410"
+          stroke="#111827"
+          strokeLinecap="round"
+          strokeWidth="10"
+        />
         <path
           d="M224 438L272 383L350 455H306L267 421L241 456H202L224 438Z"
           fill="#ec4899"
           opacity="0.9"
         />
-        <path d="M296 402L342 439" stroke="#22d3ee" strokeLinecap="round" strokeWidth="8" />
+        <path
+          d="M296 402L342 439"
+          stroke="#22d3ee"
+          strokeLinecap="round"
+          strokeWidth="8"
+        />
         <path d="M304 434H350" stroke="#8b5cf6" strokeLinecap="round" strokeWidth="8" />
       </g>
 
       <g className="hero-25d-neck">
         <path d="M260 299H314L305 352C296 364 276 364 267 352L260 299Z" fill="#f5cfe1" />
-        <path
-          d="M245 327H324L316 354H254L245 327Z"
-          fill="#1e293b"
-          opacity="0.94"
-        />
+        <path d="M245 327H324L316 354H254L245 327Z" fill="#1e293b" opacity="0.94" />
         <path d="M260 340H304" stroke="#22d3ee" strokeLinecap="round" strokeWidth="4" />
       </g>
 
@@ -153,8 +164,18 @@ function AnimeAvatarArt() {
           fill="url(#faceSoft)"
         />
         <g clipPath="url(#faceCrop)" opacity="0.35">
-          <path d="M190 169L303 318" stroke="#22d3ee" strokeLinecap="round" strokeWidth="3" />
-          <path d="M395 186L289 324" stroke="#ec4899" strokeLinecap="round" strokeWidth="3" />
+          <path
+            d="M190 169L303 318"
+            stroke="#22d3ee"
+            strokeLinecap="round"
+            strokeWidth="3"
+          />
+          <path
+            d="M395 186L289 324"
+            stroke="#ec4899"
+            strokeLinecap="round"
+            strokeWidth="3"
+          />
         </g>
         <path
           d="M225 205C239 192 262 192 275 207"
@@ -255,10 +276,33 @@ function AnimeAvatarArt() {
           opacity="0.94"
         />
         <path d="M295 145H314" stroke="#0f172a" strokeLinecap="round" strokeWidth="8" />
-        <path d="M177 110C251 87 365 89 437 112" stroke="#111827" strokeLinecap="round" strokeWidth="9" />
-        <path d="M182 130L238 129" opacity="0.45" stroke="#f8fafc" strokeLinecap="round" strokeWidth="4" />
-        <path d="M337 132L398 132" opacity="0.45" stroke="#f8fafc" strokeLinecap="round" strokeWidth="4" />
-        <path d="M450 124L468 154L453 184" fill="none" stroke="#111827" strokeLinecap="round" strokeWidth="7" />
+        <path
+          d="M177 110C251 87 365 89 437 112"
+          stroke="#111827"
+          strokeLinecap="round"
+          strokeWidth="9"
+        />
+        <path
+          d="M182 130L238 129"
+          opacity="0.45"
+          stroke="#f8fafc"
+          strokeLinecap="round"
+          strokeWidth="4"
+        />
+        <path
+          d="M337 132L398 132"
+          opacity="0.45"
+          stroke="#f8fafc"
+          strokeLinecap="round"
+          strokeWidth="4"
+        />
+        <path
+          d="M450 124L468 154L453 184"
+          fill="none"
+          stroke="#111827"
+          strokeLinecap="round"
+          strokeWidth="7"
+        />
       </g>
 
       <g className="hero-25d-can">
@@ -266,10 +310,33 @@ function AnimeAvatarArt() {
           d="M118 276L207 306C220 311 226 326 220 344L210 373C204 390 190 399 177 395L88 364C75 360 69 344 75 327L85 298C91 281 105 272 118 276Z"
           fill="url(#canYellow)"
         />
-        <path d="M86 302L219 348" opacity="0.74" stroke="#f8fafc" strokeLinecap="round" strokeWidth="8" />
-        <path d="M95 278L226 323" opacity="0.5" stroke="#f8fafc" strokeLinecap="round" strokeWidth="5" />
-        <path d="M78 359L205 402" opacity="0.44" stroke="#f8fafc" strokeLinecap="round" strokeWidth="5" />
-        <path d="M119 318L148 328M108 343L177 367M158 293L197 306" stroke="#b45309" strokeLinecap="round" strokeWidth="5" />
+        <path
+          d="M86 302L219 348"
+          opacity="0.74"
+          stroke="#f8fafc"
+          strokeLinecap="round"
+          strokeWidth="8"
+        />
+        <path
+          d="M95 278L226 323"
+          opacity="0.5"
+          stroke="#f8fafc"
+          strokeLinecap="round"
+          strokeWidth="5"
+        />
+        <path
+          d="M78 359L205 402"
+          opacity="0.44"
+          stroke="#f8fafc"
+          strokeLinecap="round"
+          strokeWidth="5"
+        />
+        <path
+          d="M119 318L148 328M108 343L177 367M158 293L197 306"
+          stroke="#b45309"
+          strokeLinecap="round"
+          strokeWidth="5"
+        />
         <circle cx="151" cy="346" r="12" fill="#fff7ad" opacity="0.64" />
       </g>
 
@@ -278,15 +345,46 @@ function AnimeAvatarArt() {
           d="M145 371C117 360 103 336 114 315C125 292 157 294 181 319C202 342 196 373 171 381C162 384 153 380 145 371Z"
           fill="#f8d9ea"
         />
-        <path d="M119 318C139 328 158 335 178 342" stroke="#e7b6cf" strokeLinecap="round" strokeWidth="6" />
-        <path d="M113 340C134 347 151 354 171 362" stroke="#e7b6cf" strokeLinecap="round" strokeWidth="6" />
-        <path d="M133 298C143 314 152 328 160 342" stroke="#e7b6cf" strokeLinecap="round" strokeWidth="6" />
+        <path
+          d="M119 318C139 328 158 335 178 342"
+          stroke="#e7b6cf"
+          strokeLinecap="round"
+          strokeWidth="6"
+        />
+        <path
+          d="M113 340C134 347 151 354 171 362"
+          stroke="#e7b6cf"
+          strokeLinecap="round"
+          strokeWidth="6"
+        />
+        <path
+          d="M133 298C143 314 152 328 160 342"
+          stroke="#e7b6cf"
+          strokeLinecap="round"
+          strokeWidth="6"
+        />
       </g>
 
       <g className="hero-25d-neon-lines" opacity="0.82">
-        <path d="M34 484L154 444" stroke="#ec4899" strokeLinecap="round" strokeWidth="5" />
-        <path d="M422 109L532 55" stroke="#22d3ee" strokeLinecap="round" strokeWidth="4" />
-        <path d="M432 94L531 44L512 92" fill="none" opacity="0.62" stroke="#ec4899" strokeWidth="4" />
+        <path
+          d="M34 484L154 444"
+          stroke="#ec4899"
+          strokeLinecap="round"
+          strokeWidth="5"
+        />
+        <path
+          d="M422 109L532 55"
+          stroke="#22d3ee"
+          strokeLinecap="round"
+          strokeWidth="4"
+        />
+        <path
+          d="M432 94L531 44L512 92"
+          fill="none"
+          opacity="0.62"
+          stroke="#ec4899"
+          strokeWidth="4"
+        />
       </g>
     </svg>
   );
@@ -298,6 +396,8 @@ function HeroSceneArt() {
       <div className="hero-25d-layer hero-25d-depth-back">
         <div className="hero-25d-panel hero-25d-panel-left" />
         <div className="hero-25d-panel hero-25d-panel-right" />
+        <div className="hero-25d-shoji hero-25d-shoji-left" />
+        <div className="hero-25d-shoji hero-25d-shoji-right" />
         <div className="hero-25d-orbit hero-25d-orbit-one" />
       </div>
 
@@ -312,6 +412,8 @@ function HeroSceneArt() {
 
       <div className="hero-25d-layer hero-25d-depth-ui">
         <div className="hero-25d-chip hero-25d-chip-top">system.online</div>
+        <div className="hero-25d-chip hero-25d-chip-bottom">build log</div>
+        <div className="hero-25d-seal">開</div>
       </div>
     </>
   );
@@ -325,7 +427,7 @@ export function HeroSceneFallback() {
     >
       <div className="fallback-avatar" />
       <div className="absolute bottom-4 left-4 font-mono text-xs text-cyan-100/70">
-        render.mode: anime-fallback
+        render.mode: portrait-fallback
       </div>
     </div>
   );
@@ -374,10 +476,9 @@ export default function HeroScene() {
           isolation: isolate;
           perspective: 900px;
           background:
-            radial-gradient(circle at 52% 36%, rgba(139, 92, 246, 0.2), transparent 36%),
-            radial-gradient(circle at 72% 26%, rgba(236, 72, 153, 0.16), transparent 34%),
-            radial-gradient(circle at 32% 68%, rgba(34, 211, 238, 0.13), transparent 32%),
-            linear-gradient(145deg, rgba(22, 18, 58, 0.92), rgba(6, 11, 24, 0.76));
+            linear-gradient(120deg, rgba(255, 77, 46, 0.13), transparent 36%),
+            linear-gradient(240deg, rgba(101, 199, 189, 0.12), transparent 42%),
+            linear-gradient(145deg, rgba(28, 22, 28, 0.94), rgba(7, 7, 10, 0.82));
         }
 
         .hero-25d-frame::before {
@@ -386,8 +487,8 @@ export default function HeroScene() {
           inset: 0;
           z-index: 0;
           background-image:
-            linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+            linear-gradient(rgba(248, 234, 216, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 234, 216, 0.07) 1px, transparent 1px);
           background-size: 34px 34px;
           mask-image: radial-gradient(circle at center, black 0%, black 62%, transparent 86%);
         }
@@ -446,19 +547,19 @@ export default function HeroScene() {
           top: 50%;
           height: 70%;
           width: 82%;
-          border: 1px solid rgba(34, 211, 238, 0.25);
+          border: 1px solid rgba(242, 184, 75, 0.24);
           border-radius: 48%;
-          box-shadow: 0 0 34px rgba(34, 211, 238, 0.12);
+          box-shadow: 0 0 34px rgba(242, 184, 75, 0.12);
           transform: translate(-50%, -50%) rotate(-18deg);
           animation: hero-25d-spin 24s linear infinite;
         }
 
         .hero-25d-panel {
           position: absolute;
-          border: 1px solid rgba(34, 211, 238, 0.2);
+          border: 1px solid rgba(248, 234, 216, 0.16);
           border-radius: 8px;
           background:
-            linear-gradient(135deg, rgba(34, 211, 238, 0.14), transparent),
+            linear-gradient(135deg, rgba(255, 77, 46, 0.12), transparent),
             rgba(255, 255, 255, 0.026);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
         }
@@ -476,8 +577,31 @@ export default function HeroScene() {
           top: 13%;
           height: 22%;
           width: 24%;
-          border-color: rgba(236, 72, 153, 0.24);
+          border-color: rgba(101, 199, 189, 0.22);
           transform: rotate(12deg);
+        }
+
+        .hero-25d-shoji {
+          position: absolute;
+          bottom: 8%;
+          height: 42%;
+          width: 22%;
+          border: 1px solid rgba(248, 234, 216, 0.12);
+          background-image:
+            linear-gradient(rgba(248, 234, 216, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(248, 234, 216, 0.1) 1px, transparent 1px);
+          background-size: 22px 22px;
+          opacity: 0.42;
+        }
+
+        .hero-25d-shoji-left {
+          left: 7%;
+          transform: rotate(-4deg);
+        }
+
+        .hero-25d-shoji-right {
+          right: 8%;
+          transform: rotate(5deg);
         }
 
         .hero-25d-particles,
@@ -489,8 +613,8 @@ export default function HeroScene() {
 
         .hero-25d-particles {
           background-image:
-            radial-gradient(circle, rgba(34, 211, 238, 0.85) 0 1px, transparent 1.8px),
-            radial-gradient(circle, rgba(236, 72, 153, 0.74) 0 1px, transparent 1.8px);
+            linear-gradient(90deg, transparent 0 18px, rgba(255, 77, 46, 0.38) 18px 19px, transparent 19px 54px),
+            linear-gradient(180deg, transparent 0 20px, rgba(101, 199, 189, 0.3) 20px 21px, transparent 21px 67px);
           background-position: 0 0, 21px 19px;
           background-size: 54px 54px, 67px 67px;
           mask-image: radial-gradient(circle at center, black 0%, black 48%, transparent 76%);
@@ -506,19 +630,42 @@ export default function HeroScene() {
         .hero-25d-chip {
           position: absolute;
           border-radius: 8px;
-          border: 1px solid rgba(103, 232, 249, 0.26);
-          background: rgba(8, 47, 73, 0.5);
-          color: #cffafe;
+          border: 1px solid rgba(255, 77, 46, 0.32);
+          background: rgba(25, 12, 10, 0.58);
+          color: #ffcabd;
           font-family: var(--font-mono), ui-monospace, monospace;
           font-size: 0.75rem;
           line-height: 1;
           padding: 0.65rem 0.75rem;
-          box-shadow: 0 0 24px rgba(34, 211, 238, 0.1);
+          box-shadow: 0 0 24px rgba(255, 77, 46, 0.12);
         }
 
         .hero-25d-chip-top {
           left: 1rem;
           top: 1rem;
+        }
+
+        .hero-25d-chip-bottom {
+          bottom: 1rem;
+          right: 1rem;
+        }
+
+        .hero-25d-seal {
+          position: absolute;
+          right: 1rem;
+          top: 1rem;
+          display: flex;
+          height: 2.65rem;
+          width: 2.65rem;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(255, 77, 46, 0.62);
+          border-radius: 0.45rem;
+          background: rgba(255, 77, 46, 0.1);
+          color: #ffb7a8;
+          font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+          font-weight: 700;
+          box-shadow: inset 0 0 0 1px rgba(255, 77, 46, 0.16);
         }
 
         .hero-25d-front-hair,

@@ -10,10 +10,10 @@ const cardVariants = cva(
       variant: {
         default: "glass border-white/10",
         project:
-          "glass border-white/10 hover:translate-y-[-4px] hover:border-cyan-300/30 hover:bg-white/[0.065]",
+          "glass border-white/10 hover:translate-y-[-4px] hover:border-[rgba(255,77,46,0.32)] hover:bg-white/[0.065]",
         interactive:
-          "glass border-white/10 hover:translate-y-[-2px] hover:border-violet-300/35 hover:bg-white/[0.06]",
-        subtle: "border-white/[0.08] bg-white/[0.025]",
+          "glass border-white/10 hover:translate-y-[-2px] hover:border-[rgba(242,184,75,0.32)] hover:bg-white/[0.06]",
+        subtle: "washi-surface border-white/[0.08]",
       },
     },
     defaultVariants: {
@@ -23,8 +23,7 @@ const cardVariants = cva(
 );
 
 export interface CardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {}
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof cardVariants> {}
 
 function Card({ className, variant, ...props }: CardProps) {
   return <div className={cn(cardVariants({ variant, className }))} {...props} />;

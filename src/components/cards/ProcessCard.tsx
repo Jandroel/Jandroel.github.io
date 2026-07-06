@@ -31,15 +31,15 @@ export function ProcessCard({ step, index }: ProcessCardProps) {
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <Card variant="interactive" className="h-full min-w-0 p-5">
+    <Card variant="interactive" className="h-full min-w-0 p-5 lg:p-6">
       <div className="mb-6 flex min-w-0 items-center justify-between gap-4">
-        <span className="font-mono text-sm text-cyan-100">{number}</span>
-        <span className="flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.045] text-violet-100">
+        <span className="jp-kicker text-sm text-[#ffb7a8]">{number}</span>
+        <span className="flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.045] text-[#ffe1a3]">
           <Icon className="size-5" aria-hidden="true" />
         </span>
       </div>
-      <h3 className="text-lg font-bold text-white">{step.title}</h3>
-      <p className="mt-3 text-pretty text-sm leading-6 text-[var(--text-soft)]">
+      <h3 className="text-xl font-bold text-white">{step.title}</h3>
+      <p className="mt-3 text-pretty text-[0.95rem] leading-6 text-[var(--text-soft)]">
         {step.description}
       </p>
     </Card>

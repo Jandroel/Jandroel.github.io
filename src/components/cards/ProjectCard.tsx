@@ -11,11 +11,15 @@ import { cn } from "@/lib/utils";
 import type { Project } from "@/types";
 
 const toneClass = {
-  violet: "from-violet-400/70 via-cyan-300/35 to-magenta-400/45",
-  cyan: "from-cyan-300/70 via-blue-400/40 to-violet-400/45",
-  magenta: "from-magenta-400/70 via-violet-400/45 to-cyan-300/35",
-  green: "from-green-400/70 via-cyan-300/35 to-violet-400/40",
-  amber: "from-amber-400/70 via-green-400/35 to-cyan-300/40",
+  violet:
+    "from-[rgba(64,81,134,0.72)] via-[rgba(101,199,189,0.28)] to-[rgba(255,122,168,0.34)]",
+  cyan: "from-[rgba(101,199,189,0.62)] via-[rgba(63,124,172,0.3)] to-[rgba(242,184,75,0.28)]",
+  magenta:
+    "from-[rgba(255,122,168,0.62)] via-[rgba(255,77,46,0.28)] to-[rgba(101,199,189,0.24)]",
+  green:
+    "from-[rgba(159,178,122,0.64)] via-[rgba(101,199,189,0.24)] to-[rgba(64,81,134,0.32)]",
+  amber:
+    "from-[rgba(242,184,75,0.66)] via-[rgba(255,77,46,0.25)] to-[rgba(101,199,189,0.26)]",
 } as const;
 
 function ProjectPattern({ project }: { project: Project }) {
@@ -110,13 +114,14 @@ function ProjectVisual({ project }: { project: Project }) {
         toneClass[project.imageTone],
       )}
     >
-      <div className="absolute inset-0 bg-[#05060A]/50" />
+      <div className="absolute inset-0 bg-[#07070A]/52" />
       <div className="absolute inset-3 rounded-md border border-white/15 bg-black/20 sm:inset-4" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.16),transparent_24%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.08),transparent_28%)]" />
+      <div className="shoji-screen absolute inset-0 opacity-30" />
+      <div className="asanoha-screen absolute inset-0 opacity-25" />
       <div className="absolute left-5 right-14 top-5 flex items-center gap-1.5 sm:left-6 sm:right-16 sm:top-6 sm:gap-2">
-        <span className="h-2 w-10 rounded-full bg-cyan-200/80" />
+        <span className="h-2 w-10 rounded-full bg-[#ffb7a8]/80" />
         <span className="h-2 w-20 rounded-full bg-white/20" />
-        <span className="h-2 w-12 rounded-full bg-magenta-200/50" />
+        <span className="h-2 w-12 rounded-full bg-[#f2b84b]/55" />
       </div>
       <ProjectPattern project={project} />
       <div className="absolute right-4 top-4 rounded-md border border-white/15 bg-white/10 p-2 sm:right-5 sm:top-5">
@@ -128,9 +133,12 @@ function ProjectVisual({ project }: { project: Project }) {
 
 interface ProjectCardProps {
   project: Project;
+  index?: number;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  const fileNumber = String(index + 1).padStart(2, "0");
+
   return (
     <motion.article
       layout
@@ -150,10 +158,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Badge variant="status">{project.status}</Badge>
           </div>
           <ProjectVisual project={project} />
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#ffb7a8]">
+            Case file {fileNumber}
+          </p>
           <CardTitle>{project.title}</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-1 flex-col">
-          <p className="text-pretty text-sm leading-6 text-[var(--text-soft)]">
+          <p className="text-pretty text-[0.95rem] leading-6 text-[var(--text-soft)]">
             {project.description}
           </p>
           {project.isPlaceholder ? (
@@ -165,7 +176,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.highlights.map((highlight) => (
               <li
                 key={highlight}
-                className="flex gap-2 text-sm leading-6 text-[var(--text-soft)]"
+                className="flex gap-2 text-[0.92rem] leading-6 text-[var(--text-soft)]"
               >
                 <Sparkles
                   className="mt-1 size-4 shrink-0 text-cyan-200"

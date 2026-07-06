@@ -1,5 +1,6 @@
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
+import { CreativeArchive } from "@/components/sections/CreativeArchive";
 import { GithubSection } from "@/components/sections/GithubSection";
 import { Hero } from "@/components/sections/Hero";
 import { Process } from "@/components/sections/Process";
@@ -16,6 +17,7 @@ export default function Home() {
       <TechStack />
       <Timeline />
       <GithubSection />
+      <CreativeArchive />
       <Process />
       <Contact />
     </main>

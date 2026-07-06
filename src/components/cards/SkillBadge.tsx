@@ -75,8 +75,8 @@ export function SkillBadge({ skill, compact = false }: SkillBadgeProps) {
   return (
     <div
       className={cn(
-        "group flex min-h-12 items-center gap-3 rounded-lg border border-white/10 bg-white/[0.035] px-3 py-3 transition duration-200 hover:border-cyan-300/25 hover:bg-white/[0.065]",
-        skill.featured && "border-cyan-300/20",
+        "group flex min-h-12 items-center gap-3 rounded-lg border border-white/10 bg-white/[0.035] px-3 py-3 transition duration-200 hover:border-[rgba(255,77,46,0.28)] hover:bg-white/[0.065]",
+        skill.featured && "border-[rgba(242,184,75,0.24)]",
         compact && "min-h-10 py-2",
       )}
     >
@@ -87,7 +87,7 @@ export function SkillBadge({ skill, compact = false }: SkillBadgeProps) {
         <Icon className="size-5" style={{ color: skill.color }} />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block break-words text-sm font-semibold text-white">
+        <span className="block break-words text-[0.92rem] font-semibold text-white">
           {skill.name}
         </span>
         {skill.level ? (

@@ -13,10 +13,10 @@ import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const gridTone = [
-  "bg-cyan-300/10",
-  "bg-violet-300/[0.16]",
-  "bg-magenta-300/[0.12]",
-  "bg-green-300/[0.14]",
+  "bg-[rgba(101,199,189,0.12)]",
+  "bg-[rgba(255,77,46,0.14)]",
+  "bg-[rgba(255,122,168,0.11)]",
+  "bg-[rgba(159,178,122,0.13)]",
   "bg-white/[0.035]",
 ] as const;
 
@@ -35,8 +35,9 @@ export function GithubSection() {
             <SectionHeading
               id="github-title"
               eyebrow="GitHub"
+              mark="録"
               title="GitHub & Projects"
-              description="My GitHub is where I share experiments, learning projects, and ideas I'm building as I grow as a developer."
+              description="My GitHub is where I share experiments, learning projects, and ideas while the portfolio becomes a more personal build archive."
             />
             <div className="mt-8 grid gap-3 sm:flex sm:flex-row">
               <Button asChild className="w-full sm:w-auto">
@@ -52,10 +53,10 @@ export function GithubSection() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <Card variant="subtle" className="min-w-0 p-4 sm:p-5">
+            <Card variant="subtle" className="shoji-screen min-w-0 p-4 sm:p-5">
               <div className="mb-5 flex min-w-0 flex-wrap items-center justify-between gap-3">
                 <div className="min-w-0">
-                  <p className="font-mono text-sm text-cyan-100">
+                  <p className="jp-kicker text-sm text-cyan-100">
                     @{siteConfig.username}
                   </p>
                   <p className="mt-1 text-sm text-[var(--text-soft)]">

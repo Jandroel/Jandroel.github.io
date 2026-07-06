@@ -32,8 +32,9 @@ export function Projects() {
           <SectionHeading
             id="projects-title"
             eyebrow="Projects"
+            mark="作"
             title="Featured Projects"
-            description="A curated selection of projects that show how I design, build, and improve web experiences."
+            description="A curated selection of builds presented as compact case files with visual, technical, and learning context."
           />
         </Reveal>
 
@@ -57,8 +58,8 @@ export function Projects() {
           <TabsContent value={selectedCategory} forceMount className="mt-8 min-w-0">
             <div className="grid min-w-0 gap-5 md:grid-cols-2 xl:grid-cols-3">
               <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {filteredProjects.map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} />
                 ))}
               </AnimatePresence>
             </div>

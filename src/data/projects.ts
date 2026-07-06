@@ -39,8 +39,7 @@ export const projects = [
     status: "Placeholder",
     year: "2026",
     stack: ["React", "Spring Boot", "PostgreSQL"],
-    description:
-      "Productivity app concept for managing tasks, workflows, and progress.",
+    description: "Productivity app concept for managing tasks, workflows, and progress.",
     longDescription:
       "A future full-stack project idea centered on task organization, progress views, and clean API structure.",
     githubUrl: "#",
