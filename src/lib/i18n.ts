@@ -54,6 +54,8 @@ export const translations = {
       learningPath: "learning path",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
+      imageAlt:
+        "Japanese-inspired gaming illustration used as the main visual for Jandroel's portfolio.",
       stats: [
         ["current.arc", "Software Engineering Student"],
         ["main.focus", "Interfaces, APIs, and data"],
@@ -76,7 +78,7 @@ export const translations = {
       title: "About Me",
       description:
         "Building, learning, and improving through projects while focusing on clear systems, clean interfaces, and thoughtful implementation.",
-      body: "I'm a Software Engineering student focused on building web projects that connect clean interfaces with reliable backend logic and well-structured data.",
+      body: "I'm Gustavo Jandroel Aguirre Rodríguez, a Software Engineering student focused on building web projects that connect clean interfaces with reliable backend logic and well-structured data.",
       mottoLabel: "personal motto",
       focusCards: [
         {
@@ -380,6 +382,8 @@ export const translations = {
       learningPath: "ruta de aprendizaje",
       viewProjects: "Ver proyectos",
       contactMe: "Contactarme",
+      imageAlt:
+        "Ilustración gamer de inspiración japonesa usada como imagen principal del portafolio de Jandroel.",
       stats: [
         ["current.arc", "Estudiante de Ingeniería de Software"],
         ["main.focus", "Interfaces, APIs y datos"],
@@ -402,7 +406,7 @@ export const translations = {
       title: "Sobre mí",
       description:
         "Construyo, aprendo y mejoro a través de proyectos, enfocándome en sistemas claros, interfaces limpias y soluciones bien cuidadas.",
-      body: "Soy estudiante de Ingeniería de Software y me enfoco en crear proyectos web que conecten interfaces limpias con lógica backend confiable y datos bien estructurados.",
+      body: "Soy Gustavo Jandroel Aguirre Rodríguez, estudiante de Ingeniería de Software, y me enfoco en crear proyectos web que conecten interfaces limpias con lógica backend confiable y datos bien estructurados.",
       mottoLabel: "motto personal",
       focusCards: [
         {

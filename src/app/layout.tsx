@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "Estudiante de Ingeniería de Software construyendo proyectos web con frontend, backend y datos.",
   keywords: [
     "Jandroel",
+    "Gustavo Jandroel Aguirre Rodríguez",
+    "Gustavo Jandroel",
+    "Gustavo Aguirre",
     "Software Engineering",
     "Frontend Developer",
     "Backend Developer",
@@ -24,8 +27,8 @@ export const metadata: Metadata = {
     "TypeScript",
     "Portfolio",
   ],
-  authors: [{ name: "Jandroel" }],
-  creator: "Jandroel",
+  authors: [{ name: siteConfig.fullName }],
+  creator: siteConfig.fullName,
   openGraph: {
     title: "Jandroel | Portafolio de Ingeniería de Software",
     description:

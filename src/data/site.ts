@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Jandroel",
+  fullName: "Gustavo Jandroel Aguirre Rodríguez",
   username: "Jandroel",
   role: "Software Engineering Student / Full-Stack Developer",
   headline:

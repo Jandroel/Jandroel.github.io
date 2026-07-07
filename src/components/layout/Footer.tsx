@@ -34,7 +34,7 @@ export function Footer() {
             {t.footer.builtWith}
           </p>
           <p className="mt-2 font-mono text-xs text-[var(--text-faint)]">
-            (c) {year} Jandroel. {t.footer.rights}
+            (c) {year} {siteConfig.fullName}. {t.footer.rights}
           </p>
         </div>
         <div className="flex min-w-0 flex-col gap-4 md:items-end">
