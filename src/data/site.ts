@@ -2,8 +2,9 @@ export const siteConfig = {
   name: "Jandroel",
   username: "Jandroel",
   role: "Software Engineering Student / Full-Stack Developer",
-  headline: "Software Engineering Student building my path one project at a time.",
+  headline:
+    "Estudiante de Ingeniería de Software construyendo mi camino proyecto a proyecto.",
   description:
-    "I enjoy turning ideas into web projects, understanding what happens behind the scenes, and shaping interfaces that feel intentional.",
-  quote: "Every project is a new level to unlock.",
+    "Me gusta convertir ideas en proyectos web, entender lo que ocurre detrás de la interfaz y construir experiencias con intención.",
+  quote: "Cada proyecto es un nuevo nivel por desbloquear.",
 } as const;

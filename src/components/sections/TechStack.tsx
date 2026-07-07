@@ -6,6 +6,7 @@ import {
   Database,
   LayoutTemplate,
   Server,
+  Sparkles,
   Workflow,
   Wrench,
   type LucideIcon,
@@ -14,6 +15,7 @@ import { motion } from "motion/react";
 
 import { SkillBadge } from "@/components/cards/SkillBadge";
 import { Reveal } from "@/components/effects/Reveal";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -25,39 +27,46 @@ const categoryIcons: Record<string, LucideIcon> = {
   database: Database,
   layout: LayoutTemplate,
   server: Server,
+  sparkles: Sparkles,
   workflow: Workflow,
   wrench: Wrench,
 };
 
 export function TechStack() {
+  const { t } = useLanguage();
+
   return (
     <section id="stack" aria-labelledby="stack-title" className="relative py-16 sm:py-20">
       <Container>
         <Reveal>
           <SectionHeading
             id="stack-title"
-            eyebrow="Tech Stack"
+            eyebrow={t.stack.eyebrow}
             mark="技"
-            title="Technologies & Tools I Use"
-            description="A focused mix of languages, frameworks, databases, cloud platforms, and workflow tools arranged like a character stat screen."
+            title={t.stack.title}
+            description={t.stack.description}
           />
         </Reveal>
 
         <div className="mt-10 grid min-w-0 gap-5 lg:grid-cols-2">
           {skillGroups.map((group, groupIndex) => {
             const Icon = categoryIcons[group.icon] ?? Code2;
+            const groupCopy =
+              t.stack.groups[group.category as keyof typeof t.stack.groups];
 
             return (
               <Reveal key={group.category} delay={groupIndex * 0.05}>
                 <Card variant="subtle" className="h-full min-w-0 p-4 sm:p-5">
                   <div className="mb-5 flex min-w-0 items-start gap-4">
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-[rgba(242,184,75,0.24)] bg-[rgba(242,184,75,0.09)] text-[#ffe1a3]">
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-[rgba(216,168,79,0.22)] bg-[rgba(216,168,79,0.08)] text-[#ead09a]">
                       <Icon className="size-5" aria-hidden="true" />
                     </span>
                     <div className="min-w-0">
-                      <h3 className="text-lg font-bold text-white">{group.category}</h3>
+                      <h3 className="text-lg font-bold text-white">
+                        {groupCopy?.title ?? group.category}
+                      </h3>
                       <p className="mt-1 text-pretty text-sm leading-6 text-[var(--text-soft)]">
-                        {group.description}
+                        {groupCopy?.description ?? group.description}
                       </p>
                     </div>
                   </div>

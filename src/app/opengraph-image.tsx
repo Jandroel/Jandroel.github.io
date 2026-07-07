@@ -13,7 +13,7 @@ export default function Image() {
     <div
       style={{
         alignItems: "center",
-        background: "linear-gradient(135deg, #07070A 0%, #11131C 50%, #1A0E0B 100%)",
+        background: "linear-gradient(135deg, #07070A 0%, #11131A 50%, #15100D 100%)",
         color: "#FFF8EF",
         display: "flex",
         fontFamily: "Arial, sans-serif",
@@ -25,7 +25,7 @@ export default function Image() {
     >
       <div
         style={{
-          border: "1px solid rgba(255, 77, 46, 0.34)",
+          border: "1px solid rgba(232, 74, 42, 0.3)",
           borderRadius: 18,
           display: "flex",
           flexDirection: "column",
@@ -34,7 +34,7 @@ export default function Image() {
           width: "100%",
         }}
       >
-        <div style={{ color: "#FFB7A8", fontSize: 28 }}>
+        <div style={{ color: "#F0B19F", fontSize: 28 }}>
           Software Engineering Portfolio
         </div>
         <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>Jandroel</div>

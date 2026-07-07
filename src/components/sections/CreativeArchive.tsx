@@ -9,9 +9,9 @@ import { archiveItems } from "@/data/archive";
 import { cn } from "@/lib/utils";
 
 const visualTone = {
-  matcha: "from-[rgba(159,178,122,0.34)] via-[rgba(242,184,75,0.16)] to-transparent",
-  sakura: "from-[rgba(255,122,168,0.32)] via-[rgba(255,77,46,0.14)] to-transparent",
-  teal: "from-[rgba(101,199,189,0.3)] via-[rgba(64,81,134,0.18)] to-transparent",
+  matcha: "from-[rgba(141,156,114,0.3)] via-[rgba(216,168,79,0.13)] to-transparent",
+  sakura: "from-[rgba(217,121,145,0.22)] via-[rgba(232,74,42,0.11)] to-transparent",
+  teal: "from-[rgba(104,184,173,0.26)] via-[rgba(51,69,101,0.18)] to-transparent",
 } as const;
 
 const icons = [ImageIcon, Film, PlaySquare] as const;
@@ -37,7 +37,7 @@ export function CreativeArchive() {
         <Reveal delay={0.08}>
           <div className="vn-dialogue mt-10 grid min-w-0 gap-5 rounded-lg p-4 sm:p-5 lg:grid-cols-[0.72fr_1fr] lg:items-center">
             <div className="min-w-0">
-              <p className="jp-kicker text-xs text-[#ffb7a8]">jandroel.archive</p>
+              <p className="jp-kicker text-xs text-[#f0b19f]">jandroel.archive</p>
               <h3 className="mt-3 text-2xl font-bold leading-tight text-white">
                 A place for the things that make each build feel mine.
               </h3>
@@ -83,7 +83,7 @@ export function CreativeArchive() {
                           />
                           <span
                             aria-hidden="true"
-                            className="absolute bottom-3 left-3 h-px w-10 bg-[#ffb7a8]/45"
+                            className="absolute bottom-3 left-3 h-px w-10 bg-[#f0b19f]/40"
                           />
                           <Icon className="size-8" aria-hidden="true" />
                         </div>

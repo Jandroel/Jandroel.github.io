@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Button } from "@/components/ui/button";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 import {
   Tooltip,
   TooltipContent,
@@ -18,6 +20,7 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
+  const { t } = useLanguage();
 
   useEffect(() => {
     const sectionIds = ["hero", ...navLinks.map((link) => link.href.slice(1))];
@@ -57,7 +60,7 @@ export function Navbar() {
             </span>
             <span className="grid leading-none">
               <span className="font-bold text-white">{siteConfig.name}</span>
-              <span className="jp-kicker mt-1 text-[0.62rem] text-[#ffb7a8]">
+              <span className="jp-kicker mt-1 text-[0.62rem] text-[#f0b19f]">
                 portfolio
               </span>
             </span>
@@ -67,6 +70,7 @@ export function Navbar() {
             <ul className="flex items-center gap-1">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.slice(1);
+                const navKey = link.href.slice(1) as keyof typeof t.nav;
 
                 return (
                   <li key={link.href}>
@@ -74,10 +78,10 @@ export function Navbar() {
                       href={link.href}
                       className={cn(
                         "focus-ring rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.045] hover:text-white",
-                        isActive && "bg-[rgba(255,77,46,0.1)] text-[#ffb7a8]",
+                        isActive && "bg-[rgba(232,74,42,0.095)] text-[#f0b19f]",
                       )}
                     >
-                      {link.label}
+                      {t.nav[navKey] ?? link.label}
                     </a>
                   </li>
                 );
@@ -86,6 +90,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <LanguageToggle className="hidden sm:inline-flex" />
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
@@ -103,7 +108,7 @@ export function Navbar() {
               <TooltipContent>GitHub</TooltipContent>
             </Tooltip>
             <Button asChild size="sm" className="hidden sm:inline-flex">
-              <a href="#contact">Let&apos;s Connect</a>
+              <a href="#contact">{t.nav.contact}</a>
             </Button>
             <MobileMenu activeSection={activeSection} />
           </div>

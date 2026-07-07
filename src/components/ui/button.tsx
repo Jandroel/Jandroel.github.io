@@ -10,13 +10,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "border border-[rgba(255,77,46,0.4)] bg-[linear-gradient(135deg,var(--vermilion),var(--gold))] text-[#170a08] shadow-[0_0_32px_rgba(255,77,46,0.18)] hover:translate-y-[-1px] hover:shadow-[0_0_42px_rgba(242,184,75,0.22)]",
+          "border border-[rgba(232,74,42,0.36)] bg-[linear-gradient(135deg,var(--vermilion),var(--gold))] text-[#170a08] shadow-[0_0_28px_rgba(232,74,42,0.14)] hover:translate-y-[-1px] hover:shadow-[0_0_38px_rgba(216,168,79,0.18)]",
         secondary:
-          "border border-white/15 bg-white/[0.035] text-[var(--paper)] hover:border-[rgba(242,184,75,0.4)] hover:bg-[rgba(242,184,75,0.1)] hover:text-white",
+          "border border-white/15 bg-white/[0.035] text-[var(--paper)] hover:border-[rgba(216,168,79,0.36)] hover:bg-[rgba(216,168,79,0.085)] hover:text-white",
         ghost:
           "border border-transparent text-[var(--text-soft)] hover:bg-white/[0.055] hover:text-white",
         terminal:
-          "border border-[rgba(159,178,122,0.3)] bg-[rgba(159,178,122,0.1)] font-mono text-[#dbe7bd] hover:border-[rgba(159,178,122,0.5)] hover:bg-[rgba(159,178,122,0.15)]",
+          "border border-[rgba(141,156,114,0.28)] bg-[rgba(141,156,114,0.095)] font-mono text-[#dbe7bd] hover:border-[rgba(141,156,114,0.42)] hover:bg-[rgba(141,156,114,0.14)]",
       },
       size: {
         sm: "min-h-9 px-3 py-2 text-xs",

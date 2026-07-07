@@ -7,19 +7,20 @@ import { FaGithub } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/types";
 
 const toneClass = {
   violet:
-    "from-[rgba(64,81,134,0.72)] via-[rgba(101,199,189,0.28)] to-[rgba(255,122,168,0.34)]",
-  cyan: "from-[rgba(101,199,189,0.62)] via-[rgba(63,124,172,0.3)] to-[rgba(242,184,75,0.28)]",
+    "from-[rgba(51,69,101,0.72)] via-[rgba(104,184,173,0.24)] to-[rgba(217,121,145,0.18)]",
+  cyan: "from-[rgba(104,184,173,0.52)] via-[rgba(54,91,125,0.28)] to-[rgba(216,168,79,0.22)]",
   magenta:
-    "from-[rgba(255,122,168,0.62)] via-[rgba(255,77,46,0.28)] to-[rgba(101,199,189,0.24)]",
+    "from-[rgba(217,121,145,0.42)] via-[rgba(232,74,42,0.22)] to-[rgba(104,184,173,0.2)]",
   green:
-    "from-[rgba(159,178,122,0.64)] via-[rgba(101,199,189,0.24)] to-[rgba(64,81,134,0.32)]",
+    "from-[rgba(141,156,114,0.52)] via-[rgba(104,184,173,0.22)] to-[rgba(51,69,101,0.3)]",
   amber:
-    "from-[rgba(242,184,75,0.66)] via-[rgba(255,77,46,0.25)] to-[rgba(101,199,189,0.26)]",
+    "from-[rgba(216,168,79,0.54)] via-[rgba(232,74,42,0.2)] to-[rgba(104,184,173,0.2)]",
 } as const;
 
 function ProjectPattern({ project }: { project: Project }) {
@@ -119,9 +120,9 @@ function ProjectVisual({ project }: { project: Project }) {
       <div className="shoji-screen absolute inset-0 opacity-30" />
       <div className="asanoha-screen absolute inset-0 opacity-25" />
       <div className="absolute left-5 right-14 top-5 flex items-center gap-1.5 sm:left-6 sm:right-16 sm:top-6 sm:gap-2">
-        <span className="h-2 w-10 rounded-full bg-[#ffb7a8]/80" />
+        <span className="h-2 w-10 rounded-full bg-[#f0b19f]/75" />
         <span className="h-2 w-20 rounded-full bg-white/20" />
-        <span className="h-2 w-12 rounded-full bg-[#f2b84b]/55" />
+        <span className="h-2 w-12 rounded-full bg-[#d8a84f]/50" />
       </div>
       <ProjectPattern project={project} />
       <div className="absolute right-4 top-4 rounded-md border border-white/15 bg-white/10 p-2 sm:right-5 sm:top-5">
@@ -137,8 +138,14 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  const { t } = useLanguage();
   const fileNumber = String(index + 1).padStart(2, "0");
   const hasLiveDemo = project.liveUrl !== "#";
+  const projectCopy = t.projects.items[project.id as keyof typeof t.projects.items];
+  const categoryLabel = t.common.categories[project.category] ?? project.category;
+  const statusLabel = t.common.statuses[project.status] ?? project.status;
+  const description = projectCopy?.description ?? project.description;
+  const highlights = projectCopy?.highlights ?? project.highlights;
 
   return (
     <motion.article
@@ -155,26 +162,26 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       >
         <CardHeader className="pb-0">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-            <Badge variant="gradient">{project.category}</Badge>
-            <Badge variant="status">{project.status}</Badge>
+            <Badge variant="gradient">{categoryLabel}</Badge>
+            <Badge variant="status">{statusLabel}</Badge>
           </div>
           <ProjectVisual project={project} />
-          <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#ffb7a8]">
-            Case file {fileNumber}
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#f0b19f]">
+            {t.projects.card.caseFile} {fileNumber}
           </p>
           <CardTitle>{project.title}</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-1 flex-col">
           <p className="text-pretty text-[0.95rem] leading-6 text-[var(--text-soft)]">
-            {project.description}
+            {description}
           </p>
           {project.isPlaceholder ? (
             <Badge variant="pixel" className="mt-4 w-fit">
-              Editable placeholder
+              {t.projects.card.editablePlaceholder}
             </Badge>
           ) : null}
           <ul className="mt-5 space-y-2">
-            {project.highlights.map((highlight) => (
+            {highlights.map((highlight) => (
               <li
                 key={highlight}
                 className="flex gap-2 text-[0.92rem] leading-6 text-[var(--text-soft)]"
@@ -202,24 +209,30 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             >
               <a
                 href={project.githubUrl}
-                aria-label={`View code for ${project.title}`}
+                aria-label={t.projects.card.viewCodeAria.replace(
+                  "{title}",
+                  project.title,
+                )}
                 rel="noopener noreferrer"
                 target={project.githubUrl === "#" ? undefined : "_blank"}
               >
                 <FaGithub aria-hidden="true" />
-                View Code
+                {t.projects.card.viewCode}
               </a>
             </Button>
             {hasLiveDemo ? (
               <Button asChild variant="ghost" className="w-full sm:w-auto">
                 <a
                   href={project.liveUrl}
-                  aria-label={`Open live demo for ${project.title}`}
+                  aria-label={t.projects.card.liveDemoAria.replace(
+                    "{title}",
+                    project.title,
+                  )}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <ExternalLink aria-hidden="true" />
-                  Live Demo
+                  {t.projects.card.liveDemo}
                 </a>
               </Button>
             ) : null}

@@ -10,9 +10,9 @@ const cardVariants = cva(
       variant: {
         default: "glass border-white/10",
         project:
-          "glass border-white/10 hover:translate-y-[-4px] hover:border-[rgba(255,77,46,0.32)] hover:bg-white/[0.065]",
+          "glass border-white/10 hover:translate-y-[-4px] hover:border-[rgba(232,74,42,0.28)] hover:bg-white/[0.062]",
         interactive:
-          "glass border-white/10 hover:translate-y-[-2px] hover:border-[rgba(242,184,75,0.32)] hover:bg-white/[0.06]",
+          "glass border-white/10 hover:translate-y-[-2px] hover:border-[rgba(216,168,79,0.28)] hover:bg-white/[0.058]",
         subtle: "washi-surface border-white/[0.08]",
       },
     },
@@ -59,7 +59,12 @@ function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
 }
 
 function CardFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("flex items-center p-5 pt-0 sm:p-6 sm:pt-0", className)} {...props} />;
+  return (
+    <div
+      className={cn("flex items-center p-5 pt-0 sm:p-6 sm:pt-0", className)}
+      {...props}
+    />
+  );
 }
 
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle };

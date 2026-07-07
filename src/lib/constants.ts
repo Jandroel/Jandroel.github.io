@@ -34,7 +34,8 @@ export const processSteps = [
   },
   {
     title: "Improve",
-    description: "Refactor, polish details, and learn from every project.",
+    description:
+      "Use assisted review, refactor with intent, polish details, and learn from every project.",
     icon: "sparkles",
   },
 ] as const;

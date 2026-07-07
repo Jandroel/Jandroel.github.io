@@ -38,7 +38,7 @@ export function TimelineItem({ item, index }: TimelineItemProps) {
       transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
       className="relative min-w-0 pl-10 sm:pl-12"
     >
-      <span className="absolute left-1 top-6 z-10 flex size-9 items-center justify-center rounded-lg border border-[rgba(255,77,46,0.3)] bg-[#101018] text-[#ffb7a8] shadow-[0_0_24px_rgba(255,77,46,0.12)] sm:left-[7px] sm:size-10">
+      <span className="absolute left-1 top-6 z-10 flex size-9 items-center justify-center rounded-lg border border-[rgba(232,74,42,0.28)] bg-[#0d0f14] text-[#f0b19f] shadow-[0_0_22px_rgba(232,74,42,0.1)] sm:left-[7px] sm:size-10">
         <Icon className="size-5" aria-hidden="true" />
       </span>
       <Card variant="interactive" className="min-w-0 p-4 sm:p-5">

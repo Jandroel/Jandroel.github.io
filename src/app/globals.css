@@ -2,37 +2,37 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
-  --font-pixel: var(--font-pixelify), ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "Geist", "Inter", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  --font-pixel: "DotGothic16", "Pixelify Sans", "MS Gothic", "Cascadia Code", monospace;
   --font-jp-serif:
-    var(--font-jp-serif), "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+    "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "YuMincho", Georgia, serif;
   --font-jp-pixel:
-    var(--font-jp-pixel), "Yu Gothic", "Hiragino Sans", "Noto Sans JP", monospace;
+    "DotGothic16", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "MS Gothic", monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--text);
   --color-surface: var(--surface);
   --color-border: var(--border);
-  --color-cyan-100: #cffafe;
-  --color-cyan-200: #a5f3fc;
-  --color-cyan-300: #67e8f9;
-  --color-violet-100: #ede9fe;
-  --color-violet-300: #c4b5fd;
-  --color-magenta-100: #fce7f3;
-  --color-magenta-200: #fbcfe8;
-  --color-magenta-300: #f9a8d4;
-  --color-magenta-400: #ec4899;
+  --color-cyan-100: #d7f4ef;
+  --color-cyan-200: #a8ddd5;
+  --color-cyan-300: #68b8ad;
+  --color-violet-100: #e3e8f2;
+  --color-violet-300: #8798b5;
+  --color-magenta-100: #f7e0e6;
+  --color-magenta-200: #e7aab8;
+  --color-magenta-300: #d97991;
+  --color-magenta-400: #bd5269;
 }
 
 :root {
   --background: #07070a;
-  --background-soft: #101018;
-  --surface: #11131c;
-  --surface-soft: rgba(17, 19, 28, 0.68);
-  --surface-glass: rgba(248, 241, 231, 0.055);
-  --border: rgba(226, 211, 190, 0.16);
-  --border-strong: rgba(255, 77, 46, 0.42);
+  --background-soft: #0d0f14;
+  --surface: #11131a;
+  --surface-soft: rgba(17, 19, 26, 0.7);
+  --surface-glass: rgba(248, 241, 231, 0.052);
+  --border: rgba(226, 211, 190, 0.14);
+  --border-strong: rgba(232, 74, 42, 0.38);
 
   --text: #fff8ef;
   --text-soft: #d9cdbf;
@@ -40,40 +40,40 @@
   --text-faint: #706c66;
 
   --sumi: #07070a;
-  --ink: #11131c;
+  --ink: #11131a;
   --paper: #fff8ef;
   --washi: #f8ead8;
-  --aizome: #27365f;
-  --indigo: #405186;
-  --sakura: #ff7aa8;
-  --sakura-soft: #ffb7c8;
-  --vermilion: #ff4d2e;
-  --matcha: #9fb27a;
-  --gold: #f2b84b;
+  --aizome: #24344f;
+  --indigo: #334565;
+  --sakura: #d97991;
+  --sakura-soft: #e7aab8;
+  --vermilion: #e84a2a;
+  --matcha: #8d9c72;
+  --gold: #d8a84f;
 
-  --violet: #405186;
-  --violet-soft: #6b78b8;
-  --cyan: #65c7bd;
-  --cyan-soft: #9ee7dc;
-  --magenta: #ff7aa8;
-  --blue: #3f7cac;
-  --green: #9fb27a;
-  --amber: #f2b84b;
+  --violet: #334565;
+  --violet-soft: #8798b5;
+  --cyan: #68b8ad;
+  --cyan-soft: #a8ddd5;
+  --magenta: #d97991;
+  --blue: #365b7d;
+  --green: #8d9c72;
+  --amber: #d8a84f;
 
   --success: #22c55e;
   --warning: #f59e0b;
   --danger: #f43f5e;
 
-  --primary-gradient: linear-gradient(135deg, #ff4d2e 0%, #f2b84b 45%, #65c7bd 100%);
+  --primary-gradient: linear-gradient(135deg, #e84a2a 0%, #d8a84f 46%, #68b8ad 100%);
   --hero-gradient:
-    linear-gradient(120deg, rgba(255, 77, 46, 0.18), transparent 42%),
-    linear-gradient(240deg, rgba(101, 199, 189, 0.16), transparent 44%),
-    linear-gradient(0deg, rgba(255, 122, 168, 0.09), transparent 56%);
+    linear-gradient(120deg, rgba(232, 74, 42, 0.14), transparent 42%),
+    linear-gradient(240deg, rgba(104, 184, 173, 0.13), transparent 44%),
+    linear-gradient(0deg, rgba(36, 52, 79, 0.2), transparent 58%);
   --card-gradient-border: linear-gradient(
     135deg,
-    rgba(255, 77, 46, 0.64),
-    rgba(242, 184, 75, 0.48),
-    rgba(101, 199, 189, 0.42)
+    rgba(232, 74, 42, 0.54),
+    rgba(216, 168, 79, 0.42),
+    rgba(104, 184, 173, 0.36)
   );
 }
 
@@ -99,11 +99,11 @@ body {
       rgba(255, 248, 239, 0.035),
       transparent 18%,
       transparent 82%,
-      rgba(255, 77, 46, 0.025)
+      rgba(232, 74, 42, 0.022)
     ),
-    linear-gradient(180deg, var(--background) 0%, #101018 54%, #0b0809 100%);
+    linear-gradient(180deg, var(--background) 0%, #0f1117 54%, #0b0809 100%);
   color: var(--text);
-  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-family: "Geist", "Inter", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -129,7 +129,7 @@ video {
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.24);
+  background: rgba(104, 184, 173, 0.26);
   color: #ffffff;
 }
 
@@ -148,7 +148,7 @@ video {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 211, 238, 0.42);
+  background: rgba(104, 184, 173, 0.42);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -206,8 +206,8 @@ video {
     background-image:
       linear-gradient(rgba(248, 234, 216, 0.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(248, 234, 216, 0.06) 1px, transparent 1px),
-      linear-gradient(rgba(255, 77, 46, 0.055) 2px, transparent 2px),
-      linear-gradient(90deg, rgba(255, 77, 46, 0.055) 2px, transparent 2px);
+      linear-gradient(rgba(232, 74, 42, 0.045) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(232, 74, 42, 0.045) 2px, transparent 2px);
     background-size:
       34px 34px,
       34px 34px,
@@ -233,17 +233,17 @@ video {
       ),
       linear-gradient(
         30deg,
-        rgba(255, 77, 46, 0.035) 12%,
+        rgba(232, 74, 42, 0.028) 12%,
         transparent 12.5%,
         transparent 87%,
-        rgba(255, 77, 46, 0.035) 87.5%
+        rgba(232, 74, 42, 0.028) 87.5%
       ),
       linear-gradient(
         150deg,
-        rgba(255, 77, 46, 0.035) 12%,
+        rgba(232, 74, 42, 0.028) 12%,
         transparent 12.5%,
         transparent 87%,
-        rgba(255, 77, 46, 0.035) 87.5%
+        rgba(232, 74, 42, 0.028) 87.5%
       );
     background-position:
       0 0,
@@ -258,36 +258,35 @@ video {
       linear-gradient(135deg, rgba(255, 248, 239, 0.08), rgba(255, 248, 239, 0.028)),
       linear-gradient(
         90deg,
-        rgba(255, 77, 46, 0.04),
+        rgba(232, 74, 42, 0.035),
         transparent 28%,
-        rgba(101, 199, 189, 0.035)
+        rgba(104, 184, 173, 0.035)
       ),
       rgba(17, 19, 28, 0.7);
     box-shadow:
       inset 0 1px 0 rgba(255, 248, 239, 0.08),
-      inset 0 -1px 0 rgba(255, 77, 46, 0.04);
+      inset 0 -1px 0 rgba(232, 74, 42, 0.035);
   }
 
   .jp-kicker {
     font-family:
-      var(--font-jp-pixel), var(--font-geist-mono), "Yu Gothic", "Hiragino Sans",
-      monospace;
+      "DotGothic16", "Cascadia Code", "Yu Gothic", "Hiragino Sans", "MS Gothic", monospace;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
   .jp-serif {
-    font-family: var(--font-jp-serif), "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "YuMincho", serif;
   }
 
   .jp-pixel {
-    font-family: var(--font-jp-pixel), var(--font-geist-mono), "Yu Gothic", monospace;
+    font-family: "DotGothic16", "Cascadia Code", "Yu Gothic", "MS Gothic", monospace;
   }
 
   .jp-vertical {
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    font-family: var(--font-jp-serif), "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "YuMincho", serif;
   }
 
   .hanko-mark {
@@ -296,15 +295,15 @@ video {
     min-width: 2.25rem;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 77, 46, 0.72);
+    border: 1px solid rgba(232, 74, 42, 0.66);
     border-radius: 0.35rem;
-    background: rgba(255, 77, 46, 0.1);
-    color: #ffb7a8;
-    font-family: var(--font-jp-serif), "Yu Mincho", "Hiragino Mincho ProN", serif;
+    background: rgba(232, 74, 42, 0.095);
+    color: #f0b19f;
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "YuMincho", serif;
     font-size: 1rem;
     font-weight: 700;
     line-height: 1;
-    box-shadow: inset 0 0 0 1px rgba(255, 77, 46, 0.16);
+    box-shadow: inset 0 0 0 1px rgba(232, 74, 42, 0.14);
   }
 
   .brush-rule {
@@ -312,8 +311,8 @@ video {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 77, 46, 0.72),
-      rgba(242, 184, 75, 0.45),
+      rgba(232, 74, 42, 0.66),
+      rgba(216, 168, 79, 0.42),
       transparent
     );
   }
@@ -370,15 +369,15 @@ video {
       ),
       linear-gradient(
         90deg,
-        rgba(255, 122, 168, 0.08),
+        rgba(217, 121, 145, 0.055),
         transparent 30%,
-        rgba(101, 199, 189, 0.08)
+        rgba(104, 184, 173, 0.07)
       );
     mix-blend-mode: screen;
   }
 
   .kanji-watermark {
-    font-family: var(--font-jp-serif), "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "YuMincho", serif;
     line-height: 0.9;
   }
 
@@ -413,7 +412,7 @@ video {
 
   .terminal-card {
     background:
-      linear-gradient(135deg, rgba(255, 77, 46, 0.09), rgba(101, 199, 189, 0.07)),
+      linear-gradient(135deg, rgba(232, 74, 42, 0.075), rgba(104, 184, 173, 0.065)),
       rgba(5, 6, 10, 0.76);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
@@ -443,28 +442,28 @@ video {
   .hud-corners::before {
     left: 10px;
     top: 10px;
-    border-left: 1px solid rgba(34, 211, 238, 0.42);
-    border-top: 1px solid rgba(34, 211, 238, 0.42);
+    border-left: 1px solid rgba(104, 184, 173, 0.34);
+    border-top: 1px solid rgba(104, 184, 173, 0.34);
   }
 
   .hud-corners::after {
     bottom: 10px;
     right: 10px;
-    border-bottom: 1px solid rgba(236, 72, 153, 0.38);
-    border-right: 1px solid rgba(236, 72, 153, 0.38);
+    border-bottom: 1px solid rgba(217, 121, 145, 0.28);
+    border-right: 1px solid rgba(217, 121, 145, 0.28);
   }
 
   .fallback-cube {
     height: 9rem;
     width: 9rem;
-    border: 1px solid rgba(34, 211, 238, 0.52);
+    border: 1px solid rgba(104, 184, 173, 0.42);
     transform: rotateX(58deg) rotateZ(45deg);
     background:
-      linear-gradient(135deg, rgba(139, 92, 246, 0.22), rgba(6, 182, 212, 0.14)),
+      linear-gradient(135deg, rgba(51, 69, 101, 0.24), rgba(104, 184, 173, 0.14)),
       rgba(255, 255, 255, 0.03);
     box-shadow:
-      0 0 48px rgba(6, 182, 212, 0.2),
-      inset 0 0 32px rgba(168, 85, 247, 0.18);
+      0 0 48px rgba(104, 184, 173, 0.16),
+      inset 0 0 32px rgba(51, 69, 101, 0.2);
     animation: cube-pulse 4s ease-in-out infinite;
   }
 
@@ -486,14 +485,14 @@ video {
       ),
       conic-gradient(
         from 230deg,
-        rgba(34, 211, 238, 0.28),
-        rgba(236, 72, 153, 0.32),
-        rgba(139, 92, 246, 0.28),
-        rgba(34, 211, 238, 0.28)
+        rgba(104, 184, 173, 0.26),
+        rgba(217, 121, 145, 0.22),
+        rgba(51, 69, 101, 0.3),
+        rgba(104, 184, 173, 0.26)
       );
     box-shadow:
-      0 0 64px rgba(6, 182, 212, 0.18),
-      inset 0 0 38px rgba(139, 92, 246, 0.16);
+      0 0 64px rgba(104, 184, 173, 0.15),
+      inset 0 0 38px rgba(51, 69, 101, 0.18);
     animation: avatar-pulse 4s ease-in-out infinite;
   }
 
@@ -507,10 +506,10 @@ video {
     border-radius: 999px;
     background: linear-gradient(
       90deg,
-      rgba(34, 211, 238, 0.78),
-      rgba(236, 72, 153, 0.86)
+      rgba(104, 184, 173, 0.72),
+      rgba(217, 121, 145, 0.66)
     );
-    box-shadow: 0 0 28px rgba(236, 72, 153, 0.34);
+    box-shadow: 0 0 28px rgba(217, 121, 145, 0.22);
     transform: rotate(-3deg);
   }
 
@@ -521,10 +520,10 @@ video {
     top: 7.35rem;
     height: 2.8rem;
     width: 5.2rem;
-    border: 1px solid rgba(34, 211, 238, 0.36);
+    border: 1px solid rgba(104, 184, 173, 0.32);
     border-radius: 48% 48% 26% 26%;
     background:
-      linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(168, 85, 247, 0.22)),
+      linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(51, 69, 101, 0.22)),
       rgba(255, 255, 255, 0.04);
   }
 }

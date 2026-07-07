@@ -33,8 +33,8 @@ export function ProcessCard({ step, index }: ProcessCardProps) {
   return (
     <Card variant="interactive" className="h-full min-w-0 p-5 lg:p-6">
       <div className="mb-6 flex min-w-0 items-center justify-between gap-4">
-        <span className="jp-kicker text-sm text-[#ffb7a8]">{number}</span>
-        <span className="flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.045] text-[#ffe1a3]">
+        <span className="jp-kicker text-sm text-[#f0b19f]">{number}</span>
+        <span className="flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.045] text-[#ead09a]">
           <Icon className="size-5" aria-hidden="true" />
         </span>
       </div>

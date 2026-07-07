@@ -7,12 +7,12 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Glow } from "@/components/effects/Glow";
 import { GridBackground } from "@/components/effects/GridBackground";
 import { Reveal } from "@/components/effects/Reveal";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { TerminalCard } from "@/components/terminal/TerminalCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { links } from "@/data/links";
-import { siteConfig } from "@/data/site";
 
 const HeroScene = dynamic(() => import("@/components/effects/HeroScene"), {
   ssr: false,
@@ -24,6 +24,8 @@ const HeroScene = dynamic(() => import("@/components/effects/HeroScene"), {
 });
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="hero"
@@ -44,9 +46,9 @@ export function Hero() {
             <Reveal className="min-w-0 space-y-7 sm:space-y-8">
               <div className="space-y-5">
                 <div className="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
-                  <Badge variant="gradient">Frontend + Backend + Databases</Badge>
-                  <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[#ffb7a8] sm:text-xs">
-                    current focus
+                  <Badge variant="gradient">{t.hero.badge}</Badge>
+                  <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[#f0b19f] sm:text-xs">
+                    {t.hero.currentFocus}
                   </span>
                 </div>
                 <div className="min-w-0 space-y-4">
@@ -57,12 +59,12 @@ export function Hero() {
                     Jandroel
                   </h1>
                   <p className="max-w-full text-balance text-[clamp(1.25rem,6vw,2rem)] font-bold leading-tight text-white lg:text-4xl">
-                    {siteConfig.headline}
+                    {t.site.headline}
                   </p>
                   <div className="vn-dialogue max-w-2xl rounded-lg p-4 sm:p-5">
                     <div className="mb-3 flex items-center justify-between gap-3">
-                      <span className="jp-kicker text-xs text-[#ffb7a8]">
-                        Personal note
+                      <span className="jp-kicker text-xs text-[#f0b19f]">
+                        {t.hero.personalNote}
                       </span>
                       <span
                         className="hanko-mark min-h-8 min-w-8 text-xs"
@@ -72,7 +74,7 @@ export function Hero() {
                       </span>
                     </div>
                     <p className="text-pretty text-base leading-7 text-[var(--text-soft)] sm:text-lg sm:leading-8">
-                      {siteConfig.description}
+                      {t.site.description}
                     </p>
                   </div>
                 </div>
@@ -81,16 +83,16 @@ export function Hero() {
                   <span className="text-[var(--text-faint)]">+</span>
                   <span className="gradient-text">Backend</span>
                   <span className="text-[var(--text-faint)]">+</span>
-                  <span className="gradient-text">Databases</span>
+                  <span className="gradient-text">{t.common.categories.Database}</span>
                   <span className="text-[var(--text-faint)]">/</span>
-                  <span className="text-[#ffb7a8]">learning path</span>
+                  <span className="text-[#f0b19f]">{t.hero.learningPath}</span>
                 </div>
               </div>
 
               <div className="grid max-w-full gap-3 sm:flex sm:flex-row">
                 <Button asChild size="lg" className="w-full sm:w-auto">
                   <a href="#projects">
-                    View Projects
+                    {t.hero.viewProjects}
                     <ArrowRight aria-hidden="true" />
                   </a>
                 </Button>
@@ -100,7 +102,7 @@ export function Hero() {
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  <a href="#contact">Contact Me</a>
+                  <a href="#contact">{t.hero.contactMe}</a>
                 </Button>
               </div>
 
@@ -128,7 +130,7 @@ export function Hero() {
           </div>
 
           <Reveal delay={0.1} className="relative min-w-0">
-            <div className="absolute -inset-2 -z-10 rounded-lg border border-[rgba(255,77,46,0.16)] bg-white/[0.02] sm:-inset-4" />
+            <div className="absolute -inset-2 -z-10 rounded-lg border border-[rgba(232,74,42,0.14)] bg-white/[0.02] sm:-inset-4" />
             <HeroScene />
           </Reveal>
         </div>
@@ -139,11 +141,7 @@ export function Hero() {
         >
           <TerminalCard />
           <div className="grid min-w-0 gap-4 sm:grid-cols-3">
-            {[
-              ["current.arc", "Software Engineering Student"],
-              ["main.focus", "Interfaces, APIs, and data"],
-              ["motto", siteConfig.quote],
-            ].map(([label, value]) => (
+            {t.hero.stats.map(([label, value]) => (
               <div
                 key={label}
                 className="washi-surface min-w-0 rounded-lg border border-white/10 p-4"

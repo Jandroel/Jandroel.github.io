@@ -1,23 +1,5 @@
-import { About } from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
-import { GithubSection } from "@/components/sections/GithubSection";
-import { Hero } from "@/components/sections/Hero";
-import { Process } from "@/components/sections/Process";
-import { Projects } from "@/components/sections/Projects";
-import { TechStack } from "@/components/sections/TechStack";
-import { Timeline } from "@/components/sections/Timeline";
+import { PortfolioShell } from "@/components/layout/PortfolioShell";
 
 export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <About />
-      <Projects />
-      <TechStack />
-      <Timeline />
-      <GithubSection />
-      <Process />
-      <Contact />
-    </main>
-  );
+  return <PortfolioShell />;
 }

@@ -1,10 +1,12 @@
+"use client";
+
 import { Cloud, Code2, Database, Server, Wrench } from "lucide-react";
 
 import { Reveal } from "@/components/effects/Reveal";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { siteConfig } from "@/data/site";
 
 const focusCards = [
   {
@@ -41,6 +43,8 @@ const focusCards = [
 ] as const;
 
 export function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" aria-labelledby="about-title" className="relative py-16 sm:py-20">
       <Container>
@@ -48,20 +52,20 @@ export function About() {
           <Reveal>
             <SectionHeading
               id="about-title"
-              eyebrow="Profile"
+              eyebrow={t.about.eyebrow}
               mark="自"
-              title="About Me"
-              description="Building, learning, and improving through projects while bringing in the things I enjoy: clean systems, games, and Japanese media."
+              title={t.about.title}
+              description={t.about.description}
             />
             <p className="mt-6 text-pretty text-base leading-8 text-[var(--text-soft)]">
-              I'm a Software Engineering student focused on building web projects that
-              connect clean interfaces with reliable backend logic and well-structured
-              data.
+              {t.about.body}
             </p>
             <blockquote className="vn-dialogue mt-8 rounded-lg p-5">
-              <p className="jp-kicker mb-3 text-xs text-[#ffb7a8]">personal motto</p>
+              <p className="jp-kicker mb-3 text-xs text-[#f0b19f]">
+                {t.about.mottoLabel}
+              </p>
               <p className="text-pretty text-xl font-bold leading-8 text-white">
-                "{siteConfig.quote}"
+                "{t.site.quote}"
               </p>
             </blockquote>
           </Reveal>
@@ -69,21 +73,22 @@ export function About() {
           <div className="grid min-w-0 gap-4 sm:grid-cols-2">
             {focusCards.map((card, index) => {
               const Icon = card.icon;
+              const copy = t.about.focusCards[index] ?? card;
 
               return (
-                <Reveal key={card.title} delay={index * 0.06}>
+                <Reveal key={copy.title} delay={index * 0.06}>
                   <Card variant="interactive" className="hud-corners h-full min-w-0 p-5">
                     <div className="mb-5 flex min-w-0 items-center justify-between gap-4">
                       <span className="flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.045] text-cyan-100">
                         <Icon className="size-5" aria-hidden="true" />
                       </span>
                       <span className="hanko-mark text-sm" aria-hidden="true">
-                        {card.label}
+                        {copy.label}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-white">{card.title}</h3>
+                    <h3 className="text-lg font-bold text-white">{copy.title}</h3>
                     <p className="mt-3 text-pretty text-sm leading-6 text-[var(--text-soft)]">
-                      {card.description}
+                      {copy.description}
                     </p>
                   </Card>
                 </Reveal>

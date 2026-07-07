@@ -1,7 +1,10 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 import { Reveal } from "@/components/effects/Reveal";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -13,14 +16,15 @@ import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const gridTone = [
-  "bg-[rgba(101,199,189,0.12)]",
-  "bg-[rgba(255,77,46,0.14)]",
-  "bg-[rgba(255,122,168,0.11)]",
-  "bg-[rgba(159,178,122,0.13)]",
+  "bg-[rgba(104,184,173,0.11)]",
+  "bg-[rgba(232,74,42,0.12)]",
+  "bg-[rgba(217,121,145,0.08)]",
+  "bg-[rgba(141,156,114,0.11)]",
   "bg-white/[0.035]",
 ] as const;
 
 export function GithubSection() {
+  const { t } = useLanguage();
   const highlightedRepos = projects.slice(0, 3);
 
   return (
@@ -34,20 +38,20 @@ export function GithubSection() {
           <Reveal>
             <SectionHeading
               id="github-title"
-              eyebrow="GitHub"
+              eyebrow={t.github.eyebrow}
               mark="録"
-              title="GitHub & Projects"
-              description="My GitHub is where I share experiments, learning projects, and ideas while the portfolio becomes a more personal build archive."
+              title={t.github.title}
+              description={t.github.description}
             />
             <div className="mt-8 grid gap-3 sm:flex sm:flex-row">
               <Button asChild className="w-full sm:w-auto">
                 <a href={links.github} target="_blank" rel="noopener noreferrer">
                   <FaGithub aria-hidden="true" />
-                  Visit GitHub
+                  {t.github.visit}
                 </a>
               </Button>
               <Button asChild variant="secondary" className="w-full sm:w-auto">
-                <a href="#projects">View Projects</a>
+                <a href="#projects">{t.github.viewProjects}</a>
               </Button>
             </div>
           </Reveal>
@@ -59,12 +63,15 @@ export function GithubSection() {
                   <p className="jp-kicker text-sm text-cyan-100">
                     @{siteConfig.username}
                   </p>
+                  <h3 className="mt-2 text-xl font-bold text-white">
+                    {t.github.gridTitle}
+                  </h3>
                   <p className="mt-1 text-sm text-[var(--text-soft)]">
-                    Decorative activity grid, not real contribution data.
+                    {t.github.gridNote}
                   </p>
                 </div>
                 <Badge variant="pixel" className="max-w-full">
-                  visual representation
+                  {t.github.visualRepresentation}
                 </Badge>
               </div>
               <div
@@ -90,12 +97,15 @@ export function GithubSection() {
             <Reveal key={project.id} delay={index * 0.06}>
               <Card variant="interactive" className="h-full min-w-0 p-5">
                 <div className="mb-4 flex min-w-0 items-center justify-between gap-3">
-                  <Badge variant="gradient">{project.category}</Badge>
+                  <Badge variant="gradient">
+                    {t.common.categories[project.category] ?? project.category}
+                  </Badge>
                   <FaGithub className="size-4 text-cyan-100" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{project.title}</h3>
                 <p className="mt-3 text-pretty text-sm leading-6 text-[var(--text-soft)]">
-                  {project.description}
+                  {t.projects.items[project.id as keyof typeof t.projects.items]
+                    ?.description ?? project.description}
                 </p>
                 <a
                   href={project.githubUrl}
@@ -103,7 +113,7 @@ export function GithubSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View repository
+                  {t.github.viewRepository}
                   <ExternalLink className="size-4" aria-hidden="true" />
                 </a>
               </Card>

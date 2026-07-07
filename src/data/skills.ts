@@ -260,6 +260,38 @@ export const skillGroups = [
     ],
   },
   {
+    category: "Assisted Workflow",
+    description:
+      "Research, validation, and iteration habits with assistive tools kept as a support layer.",
+    icon: "sparkles",
+    skills: [
+      {
+        name: "Prompting",
+        category: "Assisted Workflow",
+        icon: "LuSparkles",
+        color: "#D8A84F",
+        level: "Comfortable",
+        featured: true,
+      },
+      {
+        name: "Code Review Assistants",
+        category: "Assisted Workflow",
+        icon: "LuBot",
+        color: "#68B8AD",
+        level: "Comfortable",
+        featured: true,
+      },
+      {
+        name: "Research & Docs",
+        category: "Assisted Workflow",
+        icon: "LuFileSearch",
+        color: "#8798B5",
+        level: "Comfortable",
+        featured: false,
+      },
+    ],
+  },
+  {
     category: "Agile",
     description: "Planning habits for steady project progress.",
     icon: "workflow",

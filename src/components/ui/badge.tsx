@@ -9,13 +9,13 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: "border-white/10 bg-white/[0.04] text-slate-200",
-        tech: "border-[rgba(101,199,189,0.26)] bg-[rgba(101,199,189,0.1)] font-mono text-cyan-100",
+        tech: "border-[rgba(104,184,173,0.24)] bg-[rgba(104,184,173,0.095)] font-mono text-cyan-100",
         status:
-          "border-[rgba(242,184,75,0.28)] bg-[rgba(242,184,75,0.1)] font-mono text-[#ffe1a3]",
+          "border-[rgba(216,168,79,0.26)] bg-[rgba(216,168,79,0.095)] font-mono text-[#ead09a]",
         pixel:
-          "border-[rgba(255,77,46,0.3)] bg-[rgba(255,77,46,0.1)] jp-kicker text-[0.68rem] text-[#ffb7a8]",
+          "border-[rgba(232,74,42,0.28)] bg-[rgba(232,74,42,0.095)] jp-kicker text-[0.68rem] text-[#f0b19f]",
         gradient:
-          "border-transparent bg-[linear-gradient(135deg,rgba(255,77,46,.24),rgba(242,184,75,.16),rgba(101,199,189,.18))] text-white",
+          "border-transparent bg-[linear-gradient(135deg,rgba(232,74,42,.2),rgba(216,168,79,.14),rgba(104,184,173,.16))] text-white",
       },
     },
     defaultVariants: {
