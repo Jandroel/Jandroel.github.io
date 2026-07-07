@@ -10,13 +10,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "border border-cyan-300/30 bg-[linear-gradient(135deg,var(--violet),var(--cyan),var(--magenta))] text-white shadow-[0_0_32px_rgba(6,182,212,0.22)] hover:translate-y-[-1px] hover:shadow-[0_0_42px_rgba(168,85,247,0.28)]",
+          "border border-[rgba(232,74,42,0.36)] bg-[linear-gradient(135deg,var(--vermilion),var(--gold))] text-[#170a08] shadow-[0_0_28px_rgba(232,74,42,0.14)] hover:translate-y-[-1px] hover:shadow-[0_0_38px_rgba(216,168,79,0.18)]",
         secondary:
-          "border border-white/15 bg-white/[0.035] text-slate-100 hover:border-cyan-300/35 hover:bg-cyan-300/10 hover:text-white",
+          "border border-white/15 bg-white/[0.035] text-[var(--paper)] hover:border-[rgba(216,168,79,0.36)] hover:bg-[rgba(216,168,79,0.085)] hover:text-white",
         ghost:
-          "border border-transparent text-slate-300 hover:bg-white/[0.055] hover:text-white",
+          "border border-transparent text-[var(--text-soft)] hover:bg-white/[0.055] hover:text-white",
         terminal:
-          "border border-green-400/25 bg-green-400/10 font-mono text-green-200 hover:border-green-300/45 hover:bg-green-400/15",
+          "border border-[rgba(141,156,114,0.28)] bg-[rgba(141,156,114,0.095)] font-mono text-[#dbe7bd] hover:border-[rgba(141,156,114,0.42)] hover:bg-[rgba(141,156,114,0.14)]",
       },
       size: {
         sm: "min-h-9 px-3 py-2 text-xs",
@@ -33,7 +33,8 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }

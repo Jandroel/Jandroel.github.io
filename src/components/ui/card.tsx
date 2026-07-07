@@ -10,10 +10,10 @@ const cardVariants = cva(
       variant: {
         default: "glass border-white/10",
         project:
-          "glass border-white/10 hover:translate-y-[-4px] hover:border-cyan-300/30 hover:bg-white/[0.065]",
+          "glass border-white/10 hover:translate-y-[-4px] hover:border-[rgba(232,74,42,0.28)] hover:bg-white/[0.062]",
         interactive:
-          "glass border-white/10 hover:translate-y-[-2px] hover:border-violet-300/35 hover:bg-white/[0.06]",
-        subtle: "border-white/[0.08] bg-white/[0.025]",
+          "glass border-white/10 hover:translate-y-[-2px] hover:border-[rgba(216,168,79,0.28)] hover:bg-white/[0.058]",
+        subtle: "washi-surface border-white/[0.08]",
       },
     },
     defaultVariants: {
@@ -23,15 +23,14 @@ const cardVariants = cva(
 );
 
 export interface CardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {}
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof cardVariants> {}
 
 function Card({ className, variant, ...props }: CardProps) {
   return <div className={cn(cardVariants({ variant, className }))} {...props} />;
 }
 
 function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("space-y-2 p-6", className)} {...props} />;
+  return <div className={cn("space-y-2 p-5 sm:p-6", className)} {...props} />;
 }
 
 function CardTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
@@ -56,11 +55,16 @@ function CardDescription({
 }
 
 function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("p-6 pt-0", className)} {...props} />;
+  return <div className={cn("p-5 pt-0 sm:p-6 sm:pt-0", className)} {...props} />;
 }
 
 function CardFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("flex items-center p-6 pt-0", className)} {...props} />;
+  return (
+    <div
+      className={cn("flex items-center p-5 pt-0 sm:p-6 sm:pt-0", className)}
+      {...props}
+    />
+  );
 }
 
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle };

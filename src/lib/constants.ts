@@ -12,8 +12,7 @@ export const navLinks = [
 export const processSteps = [
   {
     title: "Plan",
-    description:
-      "Understand the goal, define the structure, and decide the right tools.",
+    description: "Understand the goal, define the structure, and decide the right tools.",
     icon: "clipboard",
   },
   {
@@ -30,14 +29,13 @@ export const processSteps = [
   },
   {
     title: "Test",
-    description:
-      "Check responsiveness, accessibility, edge cases, and performance.",
+    description: "Check responsiveness, accessibility, edge cases, and performance.",
     icon: "checkCircle",
   },
   {
     title: "Improve",
     description:
-      "Refactor, polish details, and learn from every project.",
+      "Use assisted review, refactor with intent, polish details, and learn from every project.",
     icon: "sparkles",
   },
 ] as const;

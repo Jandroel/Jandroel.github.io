@@ -1,6 +1,9 @@
+"use client";
+
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Container } from "@/components/ui/container";
 import { links } from "@/data/links";
 import { siteConfig } from "@/data/site";
@@ -8,26 +11,30 @@ import { navLinks } from "@/lib/constants";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
-    <footer className="relative border-t border-white/10 bg-black/10 py-10">
+    <footer className="shoji-screen relative border-t border-white/10 bg-black/10 py-10">
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(34,211,238,0.35),rgba(236,72,153,0.25),transparent)]"
+        className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(104,184,173,0.3),rgba(232,74,42,0.2),transparent)]"
       />
       <Container className="flex min-w-0 flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div className="min-w-0">
           <a
             href="#hero"
-            className="focus-ring inline-flex rounded-md font-bold text-white"
+            className="focus-ring inline-flex items-center gap-3 rounded-md font-bold text-white"
           >
-            {siteConfig.name}
+            <span className="hanko-mark text-sm" aria-hidden="true">
+              J
+            </span>
+            <span>{siteConfig.name}</span>
           </a>
           <p className="mt-2 max-w-xl text-pretty text-sm leading-6 text-[var(--text-muted)]">
-            Built with Next.js, TypeScript, Tailwind CSS and Motion.
+            {t.footer.builtWith}
           </p>
           <p className="mt-2 font-mono text-xs text-[var(--text-faint)]">
-            (c) {year} Jandroel. All rights reserved.
+            (c) {year} Jandroel. {t.footer.rights}
           </p>
         </div>
         <div className="flex min-w-0 flex-col gap-4 md:items-end">
@@ -39,7 +46,7 @@ export function Footer() {
                     href={link.href}
                     className="focus-ring rounded-md text-sm text-[var(--text-muted)] transition hover:text-white"
                   >
-                    {link.label}
+                    {t.nav[link.href.slice(1) as keyof typeof t.nav] ?? link.label}
                   </a>
                 </li>
               ))}

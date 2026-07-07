@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { ProjectCard } from "@/components/cards/ProjectCard";
 import { Reveal } from "@/components/effects/Reveal";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -14,6 +15,7 @@ type SelectedCategory = (typeof projectCategories)[number];
 
 export function Projects() {
   const defaultCategory = "All" satisfies SelectedCategory;
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] =
     useState<SelectedCategory>(defaultCategory);
   const filteredProjects =
@@ -31,9 +33,10 @@ export function Projects() {
         <Reveal>
           <SectionHeading
             id="projects-title"
-            eyebrow="Projects"
-            title="Featured Projects"
-            description="A curated selection of projects that show how I design, build, and improve web experiences."
+            eyebrow={t.projects.eyebrow}
+            mark="作"
+            title={t.projects.title}
+            description={t.projects.description}
           />
         </Reveal>
 
@@ -42,14 +45,10 @@ export function Projects() {
           className="mt-10 min-w-0"
           onValueChange={(value) => setSelectedCategory(value as SelectedCategory)}
         >
-          <TabsList aria-label="Project categories">
+          <TabsList aria-label={t.projects.tabsLabel}>
             {projectCategories.map((category) => (
-              <TabsTrigger
-                key={category}
-                value={category}
-                className="flex-1 sm:flex-none"
-              >
-                {category}
+              <TabsTrigger key={category} value={category} className="sm:flex-none">
+                {t.common.categories[category] ?? category}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -57,8 +56,8 @@ export function Projects() {
           <TabsContent value={selectedCategory} forceMount className="mt-8 min-w-0">
             <div className="grid min-w-0 gap-5 md:grid-cols-2 xl:grid-cols-3">
               <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {filteredProjects.map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} />
                 ))}
               </AnimatePresence>
             </div>

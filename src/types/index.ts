@@ -1,18 +1,9 @@
 import type { ReactNode } from "react";
 
 export type ProjectCategory =
-  | "Frontend"
-  | "Full-Stack"
-  | "Backend"
-  | "Database"
-  | "Cloud"
-  | "Experimental";
+  "Frontend" | "Full-Stack" | "Backend" | "Database" | "Cloud" | "Experimental";
 
-export type ProjectStatus =
-  | "Completed"
-  | "In Progress"
-  | "Experimental"
-  | "Placeholder";
+export type ProjectStatus = "Completed" | "In Progress" | "Experimental" | "Placeholder";
 
 export type SkillLevel = "Learning" | "Comfortable" | "Exploring";
 
