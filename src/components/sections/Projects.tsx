@@ -48,7 +48,7 @@ export function Projects() {
               <TabsTrigger
                 key={category}
                 value={category}
-                className="flex-1 sm:flex-none"
+                className="sm:flex-none"
               >
                 {category}
               </TabsTrigger>

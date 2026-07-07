@@ -6,7 +6,6 @@ export const navLinks = [
   { label: "Stack", href: "#stack" },
   { label: "Journey", href: "#journey" },
   { label: "GitHub", href: "#github" },
-  { label: "Archive", href: "#archive" },
   { label: "Contact", href: "#contact" },
 ] as const satisfies readonly NavLink[];
 

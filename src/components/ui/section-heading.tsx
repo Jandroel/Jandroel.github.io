@@ -32,7 +32,7 @@ export function SectionHeading({
         <span
           aria-hidden="true"
           className={cn(
-            "kanji-watermark pointer-events-none absolute -top-8 text-7xl font-black text-[rgba(255,77,46,0.075)] sm:text-8xl",
+            "kanji-watermark pointer-events-none absolute -top-8 hidden text-8xl font-black text-[rgba(255,77,46,0.065)] sm:block",
             align === "center" ? "left-1/2 -translate-x-1/2" : "-right-2",
           )}
         >

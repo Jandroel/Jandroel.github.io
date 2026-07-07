@@ -17,7 +17,7 @@ import { siteConfig } from "@/data/site";
 const HeroScene = dynamic(() => import("@/components/effects/HeroScene"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-[280px] w-full items-center justify-center rounded-lg border border-white/10 bg-white/[0.025] sm:h-[420px] lg:h-[500px]">
+    <div className="flex h-[240px] w-full items-center justify-center rounded-lg border border-white/10 bg-white/[0.025] sm:h-[420px] lg:h-[500px]">
       <span className="font-mono text-sm text-cyan-100/70">render.loading</span>
     </div>
   ),
@@ -28,12 +28,12 @@ export function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-title"
-      className="shoji-screen relative overflow-hidden pb-16 pt-12 sm:pb-24 sm:pt-20 lg:pb-28"
+      className="shoji-screen relative overflow-hidden pb-14 pt-10 sm:pb-24 sm:pt-20 lg:pb-28"
     >
       <GridBackground />
       <Glow variant="hero" />
       <Container>
-        <div className="grid min-w-0 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-14">
+        <div className="grid min-w-0 items-center gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-14">
           <div className="relative min-w-0 max-w-3xl">
             <div
               aria-hidden="true"
@@ -43,20 +43,20 @@ export function Hero() {
             </div>
             <Reveal className="min-w-0 space-y-7 sm:space-y-8">
               <div className="space-y-5">
-                <div className="flex min-w-0 flex-wrap items-center gap-3">
+                <div className="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
                   <Badge variant="gradient">Frontend + Backend + Databases</Badge>
-                  <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#ffb7a8]">
-                    build log 01
+                  <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[#ffb7a8] sm:text-xs">
+                    current focus
                   </span>
                 </div>
                 <div className="min-w-0 space-y-4">
                   <h1
                     id="hero-title"
-                    className="max-w-full text-[clamp(3.2rem,13vw,6.4rem)] font-black leading-[0.92] text-[var(--paper)] sm:text-6xl lg:text-8xl"
+                    className="max-w-full text-[clamp(2.9rem,17vw,5.2rem)] font-black leading-[0.92] text-[var(--paper)] sm:text-6xl lg:text-8xl"
                   >
                     Jandroel
                   </h1>
-                  <p className="max-w-full text-balance text-[clamp(1.35rem,6vw,2.1rem)] font-bold leading-tight text-white lg:text-4xl">
+                  <p className="max-w-full text-balance text-[clamp(1.25rem,6vw,2rem)] font-bold leading-tight text-white lg:text-4xl">
                     {siteConfig.headline}
                   </p>
                   <div className="vn-dialogue max-w-2xl rounded-lg p-4 sm:p-5">
@@ -68,7 +68,7 @@ export function Hero() {
                         className="hanko-mark min-h-8 min-w-8 text-xs"
                         aria-hidden="true"
                       >
-                        開
+                        J
                       </span>
                     </div>
                     <p className="text-pretty text-base leading-7 text-[var(--text-soft)] sm:text-lg sm:leading-8">
@@ -76,7 +76,7 @@ export function Hero() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-wrap items-center gap-2 font-mono text-sm">
+                <div className="flex flex-wrap items-center gap-2 font-mono text-[0.82rem] sm:text-sm">
                   <span className="gradient-text">Frontend</span>
                   <span className="text-[var(--text-faint)]">+</span>
                   <span className="gradient-text">Backend</span>

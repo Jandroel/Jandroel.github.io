@@ -58,7 +58,7 @@ export function Navbar() {
             <span className="grid leading-none">
               <span className="font-bold text-white">{siteConfig.name}</span>
               <span className="jp-kicker mt-1 text-[0.62rem] text-[#ffb7a8]">
-                build log
+                portfolio
               </span>
             </span>
           </a>

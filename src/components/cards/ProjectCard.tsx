@@ -138,6 +138,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const fileNumber = String(index + 1).padStart(2, "0");
+  const hasLiveDemo = project.liveUrl !== "#";
 
   return (
     <motion.article
@@ -194,7 +195,11 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             ))}
           </div>
           <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row">
-            <Button asChild variant="secondary" className="w-full sm:w-auto">
+            <Button
+              asChild
+              variant="secondary"
+              className={cn("w-full", hasLiveDemo && "sm:w-auto")}
+            >
               <a
                 href={project.githubUrl}
                 aria-label={`View code for ${project.title}`}
@@ -205,17 +210,19 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 View Code
               </a>
             </Button>
-            <Button asChild variant="ghost" className="w-full sm:w-auto">
-              <a
-                href={project.liveUrl}
-                aria-label={`Open live demo for ${project.title}`}
-                rel="noopener noreferrer"
-                target={project.liveUrl === "#" ? undefined : "_blank"}
-              >
-                <ExternalLink aria-hidden="true" />
-                Live Demo
-              </a>
-            </Button>
+            {hasLiveDemo ? (
+              <Button asChild variant="ghost" className="w-full sm:w-auto">
+                <a
+                  href={project.liveUrl}
+                  aria-label={`Open live demo for ${project.title}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <ExternalLink aria-hidden="true" />
+                  Live Demo
+                </a>
+              </Button>
+            ) : null}
           </div>
         </CardContent>
       </Card>

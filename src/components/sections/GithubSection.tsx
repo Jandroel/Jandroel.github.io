@@ -100,7 +100,7 @@ export function GithubSection() {
                 <a
                   href={project.githubUrl}
                   className="focus-ring mt-5 inline-flex max-w-full items-center gap-2 rounded-md text-sm font-semibold text-cyan-100 transition hover:text-white"
-                  target={project.githubUrl === "#" ? undefined : "_blank"}
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   View repository

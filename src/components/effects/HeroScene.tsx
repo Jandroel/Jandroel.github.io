@@ -411,9 +411,9 @@ function HeroSceneArt() {
       </div>
 
       <div className="hero-25d-layer hero-25d-depth-ui">
-        <div className="hero-25d-chip hero-25d-chip-top">system.online</div>
-        <div className="hero-25d-chip hero-25d-chip-bottom">build log</div>
-        <div className="hero-25d-seal">開</div>
+        <div className="hero-25d-chip hero-25d-chip-top">portfolio.online</div>
+        <div className="hero-25d-chip hero-25d-chip-bottom">profile</div>
+        <div className="hero-25d-seal">J</div>
       </div>
     </>
   );
@@ -423,7 +423,7 @@ export function HeroSceneFallback() {
   return (
     <div
       aria-hidden="true"
-      className="scene-fallback relative flex h-full min-h-[280px] w-full min-w-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.025] sm:min-h-[320px]"
+      className="scene-fallback relative flex h-full min-h-[240px] w-full min-w-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.025] sm:min-h-[320px]"
     >
       <div className="fallback-avatar" />
       <div className="absolute bottom-4 left-4 font-mono text-xs text-cyan-100/70">
@@ -462,7 +462,7 @@ export default function HeroScene() {
   return (
     <div
       ref={frameRef}
-      className="hero-25d-frame relative h-[280px] w-full min-w-0 overflow-hidden rounded-lg border border-white/10 bg-white/[0.025] sm:h-[420px] lg:h-[500px]"
+      className="hero-25d-frame relative h-[240px] w-full min-w-0 overflow-hidden rounded-lg border border-white/10 bg-white/[0.025] sm:h-[420px] lg:h-[500px]"
       data-reduced-motion={shouldReduceMotion}
       onPointerLeave={handlePointerLeave}
       onPointerMove={handlePointerMove}
@@ -473,6 +473,9 @@ export default function HeroScene() {
         .hero-25d-frame {
           --px: 0;
           --py: 0;
+          --avatar-x: 8px;
+          --avatar-y: 14px;
+          --avatar-float-y: 4px;
           isolation: isolate;
           perspective: 900px;
           background:
@@ -537,7 +540,7 @@ export default function HeroScene() {
           width: min(114%, 590px);
           height: auto;
           filter: drop-shadow(0 30px 44px rgba(0, 0, 0, 0.44)) drop-shadow(0 0 38px rgba(34, 211, 238, 0.12));
-          transform: translate(8px, 14px);
+          transform: translate(var(--avatar-x), var(--avatar-y));
           animation: hero-25d-float 5.8s ease-in-out infinite;
         }
 
@@ -696,9 +699,14 @@ export default function HeroScene() {
         }
 
         @media (max-width: 640px) {
+          .hero-25d-frame {
+            --avatar-x: 8px;
+            --avatar-y: 18px;
+            --avatar-float-y: 10px;
+          }
+
           .hero-25d-avatar {
-            width: min(126%, 470px);
-            transform: translate(12px, 22px);
+            width: min(118%, 390px);
           }
 
           .hero-25d-panel-left,
@@ -709,10 +717,10 @@ export default function HeroScene() {
 
         @keyframes hero-25d-float {
           0%, 100% {
-            transform: translate(8px, 14px);
+            transform: translate(var(--avatar-x), var(--avatar-y));
           }
           50% {
-            transform: translate(8px, 4px);
+            transform: translate(var(--avatar-x), var(--avatar-float-y));
           }
         }
 
