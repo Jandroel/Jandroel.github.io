@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Jandroel Portfolio";
+export const alt = "Jandroel Portfolio by Gustavo Jandroel Aguirre Rodríguez";
 export const dynamic = "force-static";
 export const size = {
   width: 1200,
@@ -38,6 +38,9 @@ export default function Image() {
           Software Engineering Portfolio
         </div>
         <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>Jandroel</div>
+        <div style={{ color: "#F0B19F", fontSize: 28, lineHeight: 1.2 }}>
+          Gustavo Jandroel Aguirre Rodríguez
+        </div>
         <div style={{ color: "#D9CDBF", fontSize: 36, lineHeight: 1.25 }}>
           Building my path one project at a time.
         </div>

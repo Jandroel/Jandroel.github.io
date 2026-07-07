@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { ArrowRight, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -13,15 +13,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { links } from "@/data/links";
-
-const HeroScene = dynamic(() => import("@/components/effects/HeroScene"), {
-  ssr: false,
-  loading: () => (
-    <div className="flex h-[240px] w-full items-center justify-center rounded-lg border border-white/10 bg-white/[0.025] sm:h-[420px] lg:h-[500px]">
-      <span className="font-mono text-sm text-cyan-100/70">render.loading</span>
-    </div>
-  ),
-});
 
 export function Hero() {
   const { t } = useLanguage();
@@ -131,7 +122,26 @@ export function Hero() {
 
           <Reveal delay={0.1} className="relative min-w-0">
             <div className="absolute -inset-2 -z-10 rounded-lg border border-[rgba(232,74,42,0.14)] bg-white/[0.02] sm:-inset-4" />
-            <HeroScene />
+            <div className="jp-media-frame group relative mx-auto aspect-square w-full max-w-[21rem] overflow-hidden rounded-xl border-[rgba(232,74,42,0.24)] bg-[#0d0f14] shadow-[0_24px_72px_rgba(0,0,0,0.3)] sm:max-w-[28rem] lg:max-w-[31rem]">
+              <Image
+                src="/images/sw_jp.png"
+                alt={t.hero.imageAlt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="object-cover object-center transition duration-700 ease-out group-hover:scale-[1.03]"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-[#07070a]/30 to-transparent"
+              />
+              <div
+                aria-hidden="true"
+                className="hanko-mark absolute bottom-4 right-4 z-20 min-h-10 min-w-10 bg-[#180d0b]/70 backdrop-blur"
+              >
+                J
+              </div>
+            </div>
           </Reveal>
         </div>
 
