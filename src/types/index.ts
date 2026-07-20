@@ -20,6 +20,7 @@ export interface Project {
   readonly githubUrl: string;
   readonly liveUrl: string;
   readonly isPlaceholder: boolean;
+  readonly previewImage: string;
   readonly imageTone: "violet" | "cyan" | "magenta" | "green" | "amber";
 }
 

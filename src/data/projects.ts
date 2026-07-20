@@ -27,6 +27,7 @@ export const projects = [
       "Learning paths, lab cards, and Markdown export",
     ],
     isPlaceholder: false,
+    previewImage: "/images/projects/redevops-lab-concept.webp",
     imageTone: "violet",
   },
   {
@@ -48,6 +49,7 @@ export const projects = [
       "Responsive admin shell with toasts and dialogs",
     ],
     isPlaceholder: false,
+    previewImage: "/images/projects/gestobra-frontend-concept.webp",
     imageTone: "cyan",
   },
   {
@@ -69,6 +71,7 @@ export const projects = [
       "PostgreSQL and Docker-ready local workflow",
     ],
     isPlaceholder: false,
+    previewImage: "/images/projects/gestobra-backend-concept.webp",
     imageTone: "green",
   },
   {
@@ -90,6 +93,7 @@ export const projects = [
       "Responsive UI, SEO metadata, and Playwright smoke test",
     ],
     isPlaceholder: false,
+    previewImage: "/images/projects/clickmemories-concept.webp",
     imageTone: "amber",
   },
 ] as const satisfies readonly Project[];

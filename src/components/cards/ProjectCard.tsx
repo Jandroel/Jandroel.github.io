@@ -1,7 +1,9 @@
 "use client";
 
-import { ExternalLink, Layers3, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Layers3, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
+import { useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
 import { Badge } from "@/components/ui/badge";
@@ -107,13 +109,12 @@ function ProjectPattern({ project }: { project: Project }) {
   );
 }
 
-function ProjectVisual({ project }: { project: Project }) {
+function ProjectSchematic({ project, label }: { project: Project; label: string }) {
   return (
     <div
-      className={cn(
-        "relative mb-5 aspect-[16/10] min-w-0 overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br",
-        toneClass[project.imageTone],
-      )}
+      className={cn("absolute inset-0 bg-gradient-to-br", toneClass[project.imageTone])}
+      role="img"
+      aria-label={label}
     >
       <div className="absolute inset-0 bg-[#07070A]/52" />
       <div className="absolute inset-3 rounded-md border border-white/15 bg-black/20 sm:inset-4" />
@@ -128,6 +129,123 @@ function ProjectVisual({ project }: { project: Project }) {
       <div className="absolute right-4 top-4 rounded-md border border-white/15 bg-white/10 p-2 sm:right-5 sm:top-5">
         <Layers3 className="size-4 text-white" aria-hidden="true" />
       </div>
+    </div>
+  );
+}
+
+function ProjectGallery({ project }: { project: Project }) {
+  const { t } = useLanguage();
+  const [activeSlide, setActiveSlide] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const totalSlides = 2;
+  const labels = [t.projects.card.conceptPreview, t.projects.card.interfaceMap] as const;
+
+  const goToSlide = (nextSlide: number) => {
+    setActiveSlide((nextSlide + totalSlides) % totalSlides);
+  };
+
+  const handleTouchEnd = (clientX: number) => {
+    if (touchStartX.current === null) return;
+
+    const distance = clientX - touchStartX.current;
+    touchStartX.current = null;
+
+    if (Math.abs(distance) < 36) return;
+    goToSlide(activeSlide + (distance < 0 ? 1 : -1));
+  };
+
+  return (
+    <div
+      className="focus-ring group/gallery relative mb-5 aspect-[16/10] min-w-0 touch-pan-y overflow-hidden rounded-lg border border-white/10 bg-[#07070a]"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={t.projects.card.galleryLabel.replace("{title}", project.title)}
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") goToSlide(activeSlide - 1);
+        if (event.key === "ArrowRight") goToSlide(activeSlide + 1);
+      }}
+      onTouchStart={(event) => {
+        touchStartX.current = event.changedTouches[0]?.clientX ?? null;
+      }}
+      onTouchEnd={(event) => {
+        handleTouchEnd(event.changedTouches[0]?.clientX ?? 0);
+      }}
+    >
+      <motion.div
+        key={activeSlide}
+        initial={{ opacity: 0.35, x: activeSlide === 0 ? -8 : 8 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className="absolute inset-0"
+      >
+        {activeSlide === 0 ? (
+          <>
+            <Image
+              src={project.previewImage}
+              alt={t.projects.card.conceptImageAlt.replace("{title}", project.title)}
+              fill
+              draggable={false}
+              sizes="(min-width: 1280px) 26vw, (min-width: 768px) 45vw, calc(100vw - 3rem)"
+              className="select-none object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a]/35 via-transparent to-[#07070a]/10" />
+          </>
+        ) : (
+          <ProjectSchematic
+            project={project}
+            label={t.projects.card.schematicImageAlt.replace("{title}", project.title)}
+          />
+        )}
+      </motion.div>
+
+      <span className="jp-kicker absolute left-3 top-3 z-10 rounded-[0.3rem] border border-[#e84a2a]/40 bg-[#07070a]/90 px-2.5 py-1.5 text-[0.58rem] font-semibold tracking-normal text-[#f0b19f] shadow-lg backdrop-blur-sm">
+        {labels[activeSlide]}
+      </span>
+
+      <button
+        type="button"
+        className="focus-ring absolute left-2 top-1/2 z-10 inline-flex size-8 -translate-y-1/2 items-center justify-center rounded-[0.3rem] border border-white/15 bg-[#07070a]/85 text-white shadow-lg transition hover:border-[#68b8ad]/55 hover:bg-[#11131a] active:translate-y-[calc(-50%+1px)] sm:left-3"
+        onClick={() => goToSlide(activeSlide - 1)}
+        aria-label={t.projects.card.previousImage}
+      >
+        <ChevronLeft className="size-4" aria-hidden="true" />
+      </button>
+      <button
+        type="button"
+        className="focus-ring absolute right-2 top-1/2 z-10 inline-flex size-8 -translate-y-1/2 items-center justify-center rounded-[0.3rem] border border-white/15 bg-[#07070a]/85 text-white shadow-lg transition hover:border-[#68b8ad]/55 hover:bg-[#11131a] active:translate-y-[calc(-50%+1px)] sm:right-3"
+        onClick={() => goToSlide(activeSlide + 1)}
+        aria-label={t.projects.card.nextImage}
+      >
+        <ChevronRight className="size-4" aria-hidden="true" />
+      </button>
+
+      <div className="absolute bottom-2.5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5 rounded-[0.3rem] border border-white/10 bg-[#07070a]/82 px-2 py-1.5 shadow-lg backdrop-blur-sm">
+        {Array.from({ length: totalSlides }, (_, slideIndex) => (
+          <button
+            key={slideIndex}
+            type="button"
+            className={cn(
+              "focus-ring h-1.5 rounded-sm transition-all",
+              slideIndex === activeSlide
+                ? "w-5 bg-[#e84a2a]"
+                : "w-2.5 bg-white/35 hover:bg-white/60",
+            )}
+            onClick={() => goToSlide(slideIndex)}
+            aria-label={t.projects.card.goToImage.replace(
+              "{number}",
+              String(slideIndex + 1),
+            )}
+            aria-current={slideIndex === activeSlide ? "true" : undefined}
+          />
+        ))}
+      </div>
+
+      <span className="sr-only" aria-live="polite">
+        {t.projects.card.imagePosition
+          .replace("{current}", String(activeSlide + 1))
+          .replace("{total}", String(totalSlides))}
+      </span>
     </div>
   );
 }
@@ -165,7 +283,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             <Badge variant="gradient">{categoryLabel}</Badge>
             <Badge variant="status">{statusLabel}</Badge>
           </div>
-          <ProjectVisual project={project} />
+          <ProjectGallery project={project} />
           <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#f0b19f]">
             {t.projects.card.caseFile} {fileNumber}
           </p>
