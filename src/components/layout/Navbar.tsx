@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Button } from "@/components/ui/button";
+import { BrandMark } from "@/components/ui/brand-mark";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import {
   Tooltip,
@@ -55,13 +56,13 @@ export function Navbar() {
             className="focus-ring group inline-flex items-center gap-3 rounded-md"
             aria-label="Jandroel home"
           >
-            <span className="hanko-mark text-sm" aria-hidden="true">
-              J
-            </span>
+            <BrandMark className="transition-transform duration-200 group-hover:-translate-y-0.5" />
             <span className="grid leading-none">
-              <span className="font-bold text-white">{siteConfig.name}</span>
-              <span className="jp-kicker mt-1 text-[0.62rem] text-[#f0b19f]">
-                portfolio
+              <span className="text-[0.95rem] font-bold text-white">
+                {siteConfig.name}
+              </span>
+              <span className="mt-1 font-mono text-[0.56rem] font-semibold uppercase tracking-normal text-[var(--text-muted)]">
+                {siteConfig.brandLine}
               </span>
             </span>
           </a>

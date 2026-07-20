@@ -5,7 +5,9 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { BrandMark } from "@/components/ui/brand-mark";
 import { LanguageToggle } from "@/components/ui/language-toggle";
+import { siteConfig } from "@/data/site";
 import { navLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -34,11 +36,14 @@ export function MobileMenu({ activeSection }: MobileMenuProps) {
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" />
         <Dialog.Content className="shoji-screen fixed right-4 top-4 z-50 w-[min(22rem,calc(100vw-2rem))] rounded-lg border border-white/10 bg-[#0d0f14] p-5 shadow-2xl shadow-black/40">
           <div className="flex items-center justify-between gap-4">
-            <Dialog.Title className="flex items-center gap-3 text-lg font-bold text-white">
-              <span className="hanko-mark text-sm" aria-hidden="true">
-                J
+            <Dialog.Title className="flex items-center gap-3 text-white">
+              <BrandMark />
+              <span className="grid leading-none">
+                <span className="text-base font-bold">{siteConfig.name}</span>
+                <span className="mt-1 font-mono text-[0.56rem] font-semibold uppercase tracking-normal text-[var(--text-muted)]">
+                  {siteConfig.brandLine}
+                </span>
               </span>
-              <span>Jandroel</span>
             </Dialog.Title>
             <Dialog.Close asChild>
               <Button variant="ghost" size="icon" aria-label="Close navigation menu">

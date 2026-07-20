@@ -1,5 +1,7 @@
 export const siteConfig = {
   name: "Jandroel",
+  brandLine: "Software Portfolio",
+  url: "https://jandroel.github.io",
   fullName: "Gustavo Jandroel Aguirre Rodríguez",
   username: "Jandroel",
   role: "Software Engineering Student / Full-Stack Developer",

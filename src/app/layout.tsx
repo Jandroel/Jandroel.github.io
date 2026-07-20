@@ -7,8 +7,9 @@ import { siteConfig } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Jandroel | Portafolio de Ingeniería de Software",
+    default: "Jandroel | Portafolio",
     template: "%s | Jandroel",
   },
   description:
@@ -29,17 +30,21 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.fullName }],
   creator: siteConfig.fullName,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Jandroel | Portafolio de Ingeniería de Software",
+    title: "Jandroel | Portafolio",
     description:
       "Estudiante de Ingeniería de Software construyendo proyectos web con frontend, backend y datos.",
     siteName: "Jandroel Portfolio",
+    url: "/",
     type: "website",
     locale: "es_PE",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jandroel | Portafolio de Ingeniería de Software",
+    title: "Jandroel | Portafolio",
     description: siteConfig.description,
   },
   robots: {

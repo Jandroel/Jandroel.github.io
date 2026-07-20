@@ -34,9 +34,7 @@ export default function Image() {
           width: "100%",
         }}
       >
-        <div style={{ color: "#F0B19F", fontSize: 28 }}>
-          Software Engineering Portfolio
-        </div>
+        <div style={{ color: "#F0B19F", fontSize: 28 }}>Portfolio</div>
         <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>Jandroel</div>
         <div style={{ color: "#F0B19F", fontSize: 28, lineHeight: 1.2 }}>
           Gustavo Jandroel Aguirre Rodríguez
